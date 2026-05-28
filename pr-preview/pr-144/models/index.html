@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3e2ef050" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=dc159016" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -57,7 +57,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="OmniDreams" href="omnidreams.html" />
-    <link rel="prev" title="Add a new method" href="../developer_guides/new_integration.html" />
+    <link rel="prev" title="Interactive serving" href="../developer_guides/interactive_serving.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="v0.1.0a3" />
@@ -389,13 +389,12 @@ SPDX-License-Identifier: Apache-2.0
 <div class="fd-hero-eyebrow docutils container">
 <p>Eight recipes, one CLI</p>
 </div>
-<p class="fd-hero-title rubric">Every shipped model. Same <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code> front door.</p>
+<p class="fd-hero-title rubric">Every shipped model. One command line away.</p>
 <div class="fd-hero-lede docutils container">
-<p>FlashDreams ships streaming / autoregressive recipes (KV-cached,
-per-AR-step output) and bidirectional reference recipes
-(single full-block reference, used for parity). Each model
-page has the exact CLI slug, the checkpoint source, and the
-per-recipe knobs.</p>
+<p>Streaming and autoregressive recipes (KV-cached, per-AR-step
+output) and bidirectional reference recipes (single full-block
+reference, used for parity). Each model page has the canonical
+invocation, the checkpoint source, and the per-recipe knobs.</p>
 </div>
 <div class="fd-cta-row docutils container">
 <p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference external" href="https://github.com/NVIDIA/flashdreams"><span>Browse on GitHub</span></a></p>
@@ -405,15 +404,14 @@ per-recipe knobs.</p>
 <section id="running-a-model">
 <h2>Running a model<a class="headerlink" href="#running-a-model" title="Link to this heading">#</a></h2>
 <div class="fd-eyebrow docutils container">
-<p>The CLI is the only entry point</p>
+<p>One front door, every recipe</p>
 </div>
 <div class="fd-split fd-split-asymmetric docutils container">
 <div class="fd-split-text docutils container">
-<p>Every recipe is a named slug. <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span> <span class="pre">--help</span></code> lists
-every registered runner and every overridable field is a flag.
-Streaming runners take <code class="docutils literal notranslate"><span class="pre">--total-blocks</span></code> to bound the AR-step
-count; bidirectional runners produce a single end-to-end
-output.</p>
+<p>Every recipe is a named slug. Streaming runners take a
+<code class="docutils literal notranslate"><span class="pre">--total-blocks</span></code> flag to bound the autoregressive step count;
+bidirectional runners produce a single end-to-end output. Every
+overridable field on every recipe is exposed as a CLI flag.</p>
 <p>Each model page below has the canonical invocation for that
 recipe — copy, paste, run.</p>
 </div>
@@ -423,7 +421,7 @@ uv<span class="w"> </span>run<span class="w"> </span>flashdreams-run<span class=
 
 <span class="c1"># Streaming Wan 2.1 T2V (Self-Forcing plugin).</span>
 uv<span class="w"> </span>run<span class="w"> </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>self-forcing-wan2.1-t2v-1.3b-flash<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>self-forcing-wan2.1-t2v-1.3b-taehv<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--total-blocks<span class="w"> </span><span class="m">7</span>
 
 <span class="c1"># Camera-controlled I2V with bundled example data.</span>
@@ -590,9 +588,9 @@ under the upstream library.</p>
 </div>
 <div class="line-block">
 <div class="line">1. Subclass the appropriate runner base class.</div>
-<div class="line">2. Register the recipe via the <code class="docutils literal notranslate"><span class="pre">flashdreams.runners</span></code></div>
+<div class="line">2. Register the recipe via the</div>
 <div class="line-block">
-<div class="line">entry point.</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">flashdreams.runner_configs</span></code> entry point.</div>
 </div>
 <div class="line">3. Add a per-model page under <code class="docutils literal notranslate"><span class="pre">docs/source/models/</span></code>.</div>
 <div class="line">4. (Streaming) wire <code class="docutils literal notranslate"><span class="pre">--total-blocks</span></code> into the runner</div>

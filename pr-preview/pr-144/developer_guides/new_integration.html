@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3e2ef050" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=dc159016" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -56,7 +56,7 @@ SPDX-License-Identifier: Apache-2.0
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Models" href="../models/index.html" />
+    <link rel="next" title="How to use FlashDreams as a developer" href="usage_patterns.html" />
     <link rel="prev" title="Config system" href="config_system.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -479,7 +479,7 @@ flashdreams-run<span class="w"> </span>customized-method<span class="w"> </span>
 flashdreams-run<span class="w"> </span>customized-method<span class="w"> </span>--prompt<span class="w"> </span><span class="s2">&quot;A beautiful custom generation.&quot;</span>
 </pre></div>
 </div>
-<p>In order to extend FlashDreams and register your own models, you can package your code as a Python package and register it with FlashDreams via an entrypoint in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. FlashDreams will automatically look for all registered runners and will register them to be used by the <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code> CLI.</p>
+<p>To register your own models, package your code as a Python package and declare a runner entry point in its <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>. FlashDreams discovers every registered runner at import time and surfaces it through the same command-line interface as the in-tree recipes — there is no central manifest to keep in sync.</p>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. This is where the entrypoint to your method is set and also where you can specify additional dependencies required by your codebase.</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">pyproject.toml</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>

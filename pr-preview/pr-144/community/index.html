@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3e2ef050" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=dc159016" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -483,9 +483,10 @@ in the repo root.</p>
 <ol class="arabic simple">
 <li><p><strong>Fork</strong> <code class="docutils literal notranslate"><span class="pre">NVIDIA/flashdreams</span></code> and create a feature
 branch off <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
-<li><p><strong>Set up</strong> your environment with <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span> <span class="pre">--extra</span> <span class="pre">dev</span></code>.</p></li>
-<li><p><strong>Run</strong> <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">pre-commit</span> <span class="pre">run</span> <span class="pre">-a</span></code> and <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">pytest</span>
-<span class="pre">-m</span> <span class="pre">ci_cpu</span></code> before you push.</p></li>
+<li><p><strong>Set up</strong> your local environment — see
+<a class="reference internal" href="../quickstart/installation.html"><span class="doc">Installation</span></a>.</p></li>
+<li><p><strong>Run</strong> the linters and CPU-tier tests before you push;
+the <a class="reference internal" href="contributing.html"><span class="doc">Contributing to FlashDreams</span></a> page has the exact commands.</p></li>
 <li><p><strong>Sign off</strong> every commit with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--signoff</span></code>
 (DCO is a hard gate).</p></li>
 <li><p><strong>Open a PR</strong> against <code class="docutils literal notranslate"><span class="pre">main</span></code> and fill in the template.</p></li>
@@ -532,8 +533,7 @@ for the full statement.</p>
 <p class="admonition-title">PLACEHOLDER — MAINTAINERS.md</p>
 <p><strong>What goes here:</strong> A <code class="docutils literal notranslate"><span class="pre">MAINTAINERS.md</span></code> file at the repo root
 that lists active maintainers (GitHub handle, area of ownership,
-contact preference) and the criteria for promotion. Until that
-file exists, <code class="docutils literal notranslate"><span class="pre">CODEOWNERS</span></code> is the de-facto record.</p>
+contact preference) and the criteria for promotion.</p>
 </div>
 </section>
 <section id="releases">
@@ -547,15 +547,12 @@ wheels to <a class="reference external" href="https://test.pypi.org/project/flas
 on every push to <code class="docutils literal notranslate"><span class="pre">main</span></code>; once the package graduates to real
 PyPI, tagged release notes will appear at <a class="reference external" href="https://github.com/NVIDIA/flashdreams/releases">GitHub Releases</a>.</p>
 </div>
-<p>The canonical version lives in
-<code class="docutils literal notranslate"><span class="pre">flashdreams/flashdreams/_version.py</span></code> and is synced into every
-integration package by a pre-commit hook. The documentation site is
-structured to support version-pinned hosting once releases land: the
-<code class="docutils literal notranslate"><span class="pre">doc.yml</span></code> workflow already deploys release builds to
+<p>The documentation site is set up for version-pinned hosting once
+releases land: release builds will be archived under
 <code class="docutils literal notranslate"><span class="pre">flashdreams.org/versions/&lt;x.y.z&gt;/</span></code> alongside the rolling <code class="docutils literal notranslate"><span class="pre">main</span></code>
-build, and <code class="docutils literal notranslate"><span class="pre">versions/index.txt</span></code> will enumerate them. There are no
-release tags in the repo today, so this layout is on the runway
-rather than in production.</p>
+build, with a switcher in the navbar. There are no release tags in
+the repo today, so the per-version layout is on the runway rather
+than in production.</p>
 <div class="placeholder admonition">
 <p class="admonition-title">PLACEHOLDER — release cadence statement</p>
 <p><strong>What goes here:</strong> A short, public statement of the project’s
@@ -569,10 +566,12 @@ to the Releases page above.</p>
 <div class="fd-eyebrow docutils container">
 <p>Recurring questions, all in one place</p>
 </div>
+<div class="fd-lede docutils container">
 <p>Answers to questions that come up repeatedly in issues, Discord, and
 Discussions live on the <a class="reference internal" href="faq.html"><span class="doc">FAQ</span></a> page. If a question keeps coming
 up in support channels, propose an FAQ entry via a pull request —
 see <a class="reference internal" href="contributing.html"><span class="doc">Contributing to FlashDreams</span></a>.</p>
+</div>
 </section>
 <section class="fd-band-accent fd-cta-banner" id="where-to-next">
 <h2>Where to next<a class="headerlink" href="#where-to-next" title="Link to this heading">#</a></h2>

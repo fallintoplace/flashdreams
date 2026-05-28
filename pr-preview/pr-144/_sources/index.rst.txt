@@ -34,15 +34,13 @@ FlashDreams
 
          .. container:: fd-hero-lede
 
-            FlashDreams is NVIDIA's streaming inference stack for diffusion-based
-            video and interactive world models — the runtime backbone of the
-            `OmniDreams closed-loop demo at GTC 2026
+            NVIDIA's streaming inference stack for interactive
+            autoregressive video and world models. Sub-second
+            autoregressive steps after warmup, eight integrated model
+            recipes, real-time applications across gaming, autonomous
+            vehicles, robotics, and virtual environments — the runtime
+            backbone of the `OmniDreams closed-loop demo at GTC 2026
             <https://research.nvidia.com/labs/sil/projects/omnidreams-blog/>`_.
-            KV-cached transformers, ring attention, and CUDA-graph capture,
-            behind one ``flashdreams-run`` CLI. Built for real-time applications
-            across gaming, autonomous vehicles, robotics, and virtual
-            environments — eight integrated model recipes, sub-second
-            autoregressive steps after warmup.
 
          .. container:: fd-cta-row
 
@@ -71,12 +69,12 @@ FlashDreams
             :class: placeholder
 
             **What goes here:** A looping 5–10s clip of one of the streaming
-            recipes (e.g. ``self-forcing-wan2.1-t2v-1.3b-flash``) running
+            recipes (e.g. ``self-forcing-wan2.1-t2v-1.3b-taehv``) running
             end-to-end, or a stylised architecture illustration of the
             KV cache + ring attention + CUDA-graph pipeline.
 
-            **Format:** ``_static/hero-loop.mp4`` (16:9, < 4 MB, autoplay
-            muted loop) or a static ``_static/hero-illustration.svg``.
+            **Format:** ``_static/hero-loop.avif`` (animated AVIF, 16:9,
+            autoplay loop) or a static ``_static/hero-illustration.svg``.
 
 Headline numbers
 ----------------
@@ -87,9 +85,9 @@ Headline numbers
 
 .. container:: fd-lede
 
-   Wall-clock speedups on the same recipe, same GPU, against the
-   upstream library's own runner. Numbers track the rolling ``main``
-   branch; full methodology lives on the :doc:`benchmarks page
+   Per-step latency on the same recipe, same GPU, against the upstream
+   library's own runner. Each tile names the GPU and the specific
+   baseline; full methodology lives on the :doc:`benchmarks page
    <benchmarks/index>`.
 
 .. grid:: 1 2 2 4
@@ -109,7 +107,7 @@ Headline numbers
 
          .. container:: fd-stat-note
 
-            GB300, vs FastVideo baseline.
+            GB300, vs FastVideo baseline (362 ms → 171 ms per step).
 
    .. grid-item::
 
@@ -125,7 +123,7 @@ Headline numbers
 
          .. container:: fd-stat-note
 
-            H100, vs official baseline.
+            H100, vs Official baseline (1950 ms → 629 ms per step).
 
    .. grid-item::
 
@@ -141,7 +139,7 @@ Headline numbers
 
          .. container:: fd-stat-note
 
-            GB300, vs FastVideo baseline.
+            GB300, vs FastVideo baseline (534 ms → 382 ms per step).
 
    .. grid-item::
 
@@ -157,7 +155,41 @@ Headline numbers
 
          .. container:: fd-stat-note
 
-            One unified ``flashdreams-run`` CLI.
+            Streaming and bidirectional recipes, one command-line front door.
+
+Born from OmniDreams
+--------------------
+
+.. container:: fd-eyebrow
+
+   Origin story
+
+.. container:: fd-split fd-split-asymmetric-reverse
+
+   .. container:: fd-split-text
+
+      FlashDreams began as the optimized runtime behind the `OmniDreams
+      closed-loop demo for GTC 2026
+      <https://research.nvidia.com/labs/sil/projects/omnidreams-blog/>`_,
+      and has grown into a general platform for real-time world-model
+      applications — driving simulators, autonomous-vehicle scene
+      rollout, embodied robotics, gaming, and virtual environments.
+
+      The same inference pipeline that ships in OmniDreams now hosts
+      seven other model families, and the same per-AR-step latency
+      targets carry across all of them.
+
+   .. container:: fd-split-visual
+
+      .. admonition:: PLACEHOLDER — OmniDreams hero loop
+         :class: placeholder
+
+         **What goes here:** A short looping clip from the OmniDreams
+         multi-view streaming recipe — closed-loop scene rollout,
+         multiple simultaneous camera views, generated end-to-end by
+         FlashDreams. ``_static/omnidreams-loop.avif`` (animated AVIF,
+         16:9). Until that lands, the :doc:`OmniDreams model page
+         <models/omnidreams>` carries the canonical sample videos.
 
 Why FlashDreams
 ---------------
@@ -211,8 +243,7 @@ See it in motion
 .. container:: fd-lede
 
    Streaming recipes generating side-by-side against their upstream
-   references. Each loop is < 10s, captured at native resolution; the
-   final reel will replace the placeholder tiles below.
+   references. Each loop is < 10s, captured at native resolution.
 
 .. container:: fd-media-rail
 
@@ -221,7 +252,7 @@ See it in motion
       .. admonition:: PLACEHOLDER — Self-Forcing T2V loop
          :class: placeholder
 
-         5–10s looping clip of ``self-forcing-wan2.1-t2v-1.3b-flash``
+         5–10s looping clip of ``self-forcing-wan2.1-t2v-1.3b-taehv``
          generating from a held-out prompt. Side-by-side with the
          FastVideo baseline so the wall-clock difference reads
          visually.
@@ -253,27 +284,26 @@ What's inside
 
 .. container:: fd-lede
 
-   FlashDreams ships as one ``uv``-managed workspace: a core library, an
-   infra layer, plugin-friendly recipe registry, and a single CLI front
-   door for every shipped model.
+   A core library, an infra layer, a plugin-friendly recipe registry,
+   and a single command-line front door for every shipped model.
 
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: Unified ``flashdreams-run`` CLI
-      :class-card: fd-feature fd-feature-hero
+   .. grid-item-card:: One CLI for every model
+      :class-card: fd-feature
       :columns: 12 12 6 6
       :link: api/cli
       :link-type: doc
 
-      One console script dispatches over every in-tree and plugin
-      recipe. Every overridable field is a CLI flag; ``--help`` lists
-      every registered runner. New recipes auto-register through
-      entry points — no central manifest to keep in sync.
+      One console script dispatches every shipped recipe. Each model
+      is a named slug; every overridable field is a flag. New recipes
+      auto-register through entry points — no central manifest, no
+      per-model command to remember.
 
    .. grid-item-card:: Multi-GPU by default
       :class-card: fd-feature
-      :columns: 12 12 6 2
+      :columns: 12 12 6 6
       :link: api/infra
       :link-type: doc
 
@@ -282,7 +312,7 @@ What's inside
 
    .. grid-item-card:: Plugin-friendly recipes
       :class-card: fd-feature
-      :columns: 12 12 6 2
+      :columns: 12 12 6 6
       :link: developer_guides/new_integration
       :link-type: doc
 
@@ -292,7 +322,7 @@ What's inside
 
    .. grid-item-card:: Mockable for CI
       :class-card: fd-feature
-      :columns: 12 12 6 2
+      :columns: 12 12 6 6
       :link: developer_guides/inference_pipeline_overview
       :link-type: doc
 
@@ -308,11 +338,11 @@ Supported models
 
 .. container:: fd-lede
 
-   Each model below has a walkthrough with the exact
-   ``flashdreams-run`` slug, the checkpoint source, and any per-recipe
-   knobs. Streaming / autoregressive variants are KV-cached and emit
-   per-AR-step output; bidirectional variants are the single
-   full-block reference.
+   Streaming and autoregressive variants emit per-AR-step output with
+   sub-second latency once warm; bidirectional variants are the
+   single full-block reference used for parity. Each model page has
+   the canonical invocation, the checkpoint source, and the per-recipe
+   knobs.
 
 .. container:: fd-media-rail fd-media-rail-4
 
@@ -387,6 +417,14 @@ Supported models
       OmniDreams checkpoints, including a diffusion-forcing AR
       variant.
 
+   .. grid-item-card:: FlashVSR
+      :class-card: fd-feature
+      :link: models/flashvsr
+      :link-type: doc
+
+      Streaming video super-resolution for the FlashVSR
+      checkpoint family.
+
    .. grid-item-card:: Wan 2.1 (bidirectional)
       :class-card: fd-feature
       :link: models/wan21
@@ -395,6 +433,13 @@ Supported models
       Bidirectional reference model used for parity testing — T2V
       1.3B / 480p and I2V 14B / 480p.
 
+   .. grid-item-card:: Cosmos-Predict2.5 (bidirectional)
+      :class-card: fd-feature
+      :link: models/cosmos_predict2
+      :link-type: doc
+
+      Bidirectional Cosmos-Predict2 reference recipes (T2V / I2V, 2B).
+
 How it compares
 ---------------
 
@@ -402,20 +447,25 @@ How it compares
 
    Same recipe, same hardware
 
+.. container:: fd-lede
+
+   FlashDreams runs the same model code as the library it integrates
+   with — measured in wall-clock at steady state, post-warmup,
+   post-graph-capture, post-JIT.
+
 .. container:: fd-split fd-split-reverse
 
    .. container:: fd-split-text
 
-      We rebuild the upstream library's own runner on identical
-      hardware, then run FlashDreams against the same checkpoint and
-      sampling configuration. The delta is wall-clock at steady
-      state — post warmup, post graph capture, post first-iteration
-      JIT compilation. Numbers update with the rolling ``main`` branch
-      whenever a recipe lands a perf change.
+      We rebuild the upstream runner on identical hardware, then run
+      FlashDreams against the same checkpoint and sampling
+      configuration. The delta is what the per-step latency table on
+      the benchmarks page shows; numbers update with the rolling
+      ``main`` branch whenever a recipe lands a perf change.
 
-      Full methodology — hardware, software pin, sampling knobs,
-      what gets timed — lives on the :doc:`benchmarks page
-      <benchmarks/index>`.
+      Full methodology — what gets timed, what we drop as warmup,
+      how the upstream baseline is built — lives on the
+      :doc:`benchmarks page <benchmarks/index>`.
 
    .. container:: fd-split-visual
 
@@ -437,22 +487,22 @@ Quick start
 
    .. container:: fd-split-text
 
-      FlashDreams is a `uv <https://docs.astral.sh/uv/>`_ workspace. The
-      CLI lazy-imports ``mediapy`` + ``opencv`` for I/O, so install the
-      ``runners`` extra whenever you want to actually generate video.
+      Sync the workspace, list the shipped recipes, run one. The first
+      sync compiles CUDA extensions for your local GPU; once that's
+      done, every recipe is a single command away.
 
-      The :doc:`quickstart/index` has the annotated quickstart, an
-      end-to-end first-generation walkthrough, and pointers into the
-      developer guides for CUDA-graph capture, distributed launching,
-      and authoring a custom recipe.
+      The :doc:`quickstart/index` is the annotated walkthrough — fresh
+      checkout to a frame on disk on a single GPU. From there the
+      :doc:`developer guides </developer_guides/index>` cover the
+      pipeline internals, distributed launching, and how to ship a
+      custom recipe of your own.
 
       .. admonition:: New to streaming diffusion?
          :class: fd-callout
 
          Read the :doc:`inference pipeline overview
          </developer_guides/inference_pipeline_overview>` before
-         tweaking recipes — it walks the hot loop a recipe goes
-         through, end to end.
+         tweaking recipes — it walks the hot loop end to end.
 
    .. container:: fd-split-visual
 
@@ -464,7 +514,7 @@ Quick start
          # Single-GPU streaming inference
          # (Self-Forcing Wan 2.1 T2V).
          uv run flashdreams-run \
-             self-forcing-wan2.1-t2v-1.3b-flash \
+             self-forcing-wan2.1-t2v-1.3b-taehv \
              --total-blocks 7
 
 .. rst-class:: fd-band-accent fd-cta-banner

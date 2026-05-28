@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3e2ef050" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=dc159016" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -391,10 +391,9 @@ SPDX-License-Identifier: Apache-2.0
 </div>
 <p class="fd-hero-title rubric">From clone to first frame in five minutes.</p>
 <div class="fd-hero-lede docutils container">
-<p>FlashDreams is a <code class="docutils literal notranslate"><span class="pre">uv</span></code> workspace — one <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span></code> brings down
-the toolchain, one <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code> invocation streams video.
-The two walkthroughs below take a fresh checkout to a generated
-clip on a single GPU.</p>
+<p>The two walkthroughs below take a fresh checkout to a generated
+clip on a single GPU. Install once, pick a streaming recipe, watch
+the per-step timings drop below a second as the pipeline warms.</p>
 </div>
 <div class="fd-cta-row docutils container">
 <p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference internal" href="installation.html"><span class="doc">Install FlashDreams</span></a></p>
@@ -408,15 +407,15 @@ clip on a single GPU.</p>
 </div>
 <div class="fd-split fd-split-asymmetric docutils container">
 <div class="fd-split-text docutils container">
-<p>The two pages below are the canonical walkthrough — they assume
+<p>The two pages below are the canonical walkthrough. They assume
 a fresh machine with a CUDA-capable GPU and walk through the
-bare minimum to reach a generated clip. Once those are behind
-you, the <a class="reference internal" href="../developer_guides/index.html"><span class="doc">developer guides</span></a>
+bare minimum to reach a generated clip on disk. Once those are
+behind you, the <a class="reference internal" href="../developer_guides/index.html"><span class="doc">developer guides</span></a>
 cover the system architecture: CUDA-graph capture, ring
 attention, distributed launching, custom recipes.</p>
-<p>The CLI is deliberately the only entry point. Every recipe is a
-named slug; <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span> <span class="pre">--help</span></code> lists every registered
-runner and every overridable field is a flag.</p>
+<p>One command-line front door is the only entry point you need.
+Every shipped recipe is a named slug; every overridable field
+is a flag.</p>
 </div>
 <div class="fd-split-visual docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Install</span>
@@ -427,7 +426,7 @@ uv<span class="w"> </span>run<span class="w"> </span>flashdreams-run<span class=
 
 <span class="c1"># 3. Run a streaming recipe</span>
 uv<span class="w"> </span>run<span class="w"> </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>self-forcing-wan2.1-t2v-1.3b-flash<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>self-forcing-wan2.1-t2v-1.3b-taehv<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--total-blocks<span class="w"> </span><span class="m">7</span>
 </pre></div>
 </div>
@@ -446,10 +445,9 @@ uv<span class="w"> </span>run<span class="w"> </span>flashdreams-run<span class=
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Install FlashDreams</div>
-<p class="sd-card-text">The minimum-friction install path. <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span></code> brings down a
-pinned PyTorch + CUDA toolchain; the <code class="docutils literal notranslate"><span class="pre">runners</span></code> extra pulls
-the I/O dependencies (<code class="docutils literal notranslate"><span class="pre">mediapy</span></code>, <code class="docutils literal notranslate"><span class="pre">opencv</span></code>) needed to
-actually emit video.</p>
+<p class="sd-card-text">The minimum-friction install path: a pinned PyTorch + CUDA
+toolchain, plus the optional I/O extras needed to write generated
+video to disk.</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="installation.html"><span class="doc">Installation</span></a></div>
 </div>
@@ -458,9 +456,9 @@ actually emit video.</p>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Launch your first model</div>
-<p class="sd-card-text">Pick a streaming recipe, drive it from <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code>,
-read the per-step log to confirm the steady-state window is
-reached.</p>
+<p class="sd-card-text">Pick a streaming recipe, run it, read the per-step log to watch
+the latency settle as the CUDA graph captures and the pipeline
+reaches steady state.</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="first_world_model.html"><span class="doc">Launch your first model</span></a></div>
 </div>

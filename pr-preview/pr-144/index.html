@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3e2ef050" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=dc159016" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -394,14 +394,12 @@ SPDX-License-Identifier: Apache-2.0
 </div>
 <p class="fd-hero-title rubric">Sub-second video diffusion. On every GPU you ship.</p>
 <div class="fd-hero-lede docutils container">
-<p>FlashDreams is NVIDIA’s streaming inference stack for diffusion-based
-video and interactive world models — the runtime backbone of the
-<a class="reference external" href="https://research.nvidia.com/labs/sil/projects/omnidreams-blog/">OmniDreams closed-loop demo at GTC 2026</a>.
-KV-cached transformers, ring attention, and CUDA-graph capture,
-behind one <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code> CLI. Built for real-time applications
-across gaming, autonomous vehicles, robotics, and virtual
-environments — eight integrated model recipes, sub-second
-autoregressive steps after warmup.</p>
+<p>NVIDIA’s streaming inference stack for interactive
+autoregressive video and world models. Sub-second
+autoregressive steps after warmup, eight integrated model
+recipes, real-time applications across gaming, autonomous
+vehicles, robotics, and virtual environments — the runtime
+backbone of the <a class="reference external" href="https://research.nvidia.com/labs/sil/projects/omnidreams-blog/">OmniDreams closed-loop demo at GTC 2026</a>.</p>
 </div>
 <div class="fd-cta-row docutils container">
 <p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference internal" href="quickstart/index.html"><span class="doc">Get started</span></a></p>
@@ -413,11 +411,11 @@ autoregressive steps after warmup.</p>
 <div class="placeholder admonition">
 <p class="admonition-title">PLACEHOLDER — hero illustration / loop</p>
 <p><strong>What goes here:</strong> A looping 5–10s clip of one of the streaming
-recipes (e.g. <code class="docutils literal notranslate"><span class="pre">self-forcing-wan2.1-t2v-1.3b-flash</span></code>) running
+recipes (e.g. <code class="docutils literal notranslate"><span class="pre">self-forcing-wan2.1-t2v-1.3b-taehv</span></code>) running
 end-to-end, or a stylised architecture illustration of the
 KV cache + ring attention + CUDA-graph pipeline.</p>
-<p><strong>Format:</strong> <code class="docutils literal notranslate"><span class="pre">_static/hero-loop.mp4</span></code> (16:9, &lt; 4 MB, autoplay
-muted loop) or a static <code class="docutils literal notranslate"><span class="pre">_static/hero-illustration.svg</span></code>.</p>
+<p><strong>Format:</strong> <code class="docutils literal notranslate"><span class="pre">_static/hero-loop.avif</span></code> (animated AVIF, 16:9,
+autoplay loop) or a static <code class="docutils literal notranslate"><span class="pre">_static/hero-illustration.svg</span></code>.</p>
 </div>
 </div>
 </div>
@@ -428,9 +426,9 @@ muted loop) or a static <code class="docutils literal notranslate"><span class="
 <p>Steady-state, post-warmup</p>
 </div>
 <div class="fd-lede docutils container">
-<p>Wall-clock speedups on the same recipe, same GPU, against the
-upstream library’s own runner. Numbers track the rolling <code class="docutils literal notranslate"><span class="pre">main</span></code>
-branch; full methodology lives on the <a class="reference internal" href="benchmarks/index.html"><span class="doc">benchmarks page</span></a>.</p>
+<p>Per-step latency on the same recipe, same GPU, against the upstream
+library’s own runner. Each tile names the GPU and the specific
+baseline; full methodology lives on the <a class="reference internal" href="benchmarks/index.html"><span class="doc">benchmarks page</span></a>.</p>
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-4 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
@@ -443,7 +441,7 @@ branch; full methodology lives on the <a class="reference internal" href="benchm
 <p>Self-Forcing speedup</p>
 </div>
 <div class="fd-stat-note docutils container">
-<p>GB300, vs FastVideo baseline.</p>
+<p>GB300, vs FastVideo baseline (362 ms → 171 ms per step).</p>
 </div>
 </div>
 </div>
@@ -456,7 +454,7 @@ branch; full methodology lives on the <a class="reference internal" href="benchm
 <p>LingBot-World speedup</p>
 </div>
 <div class="fd-stat-note docutils container">
-<p>H100, vs official baseline.</p>
+<p>H100, vs Official baseline (1950 ms → 629 ms per step).</p>
 </div>
 </div>
 </div>
@@ -469,7 +467,7 @@ branch; full methodology lives on the <a class="reference internal" href="benchm
 <p>Wan2.1 speedup</p>
 </div>
 <div class="fd-stat-note docutils container">
-<p>GB300, vs FastVideo baseline.</p>
+<p>GB300, vs FastVideo baseline (534 ms → 382 ms per step).</p>
 </div>
 </div>
 </div>
@@ -482,9 +480,37 @@ branch; full methodology lives on the <a class="reference internal" href="benchm
 <p>Integrated models</p>
 </div>
 <div class="fd-stat-note docutils container">
-<p>One unified <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code> CLI.</p>
+<p>Streaming and bidirectional recipes, one command-line front door.</p>
 </div>
 </div>
+</div>
+</div>
+</div>
+</section>
+<section id="born-from-omnidreams">
+<h2>Born from OmniDreams<a class="headerlink" href="#born-from-omnidreams" title="Link to this heading">#</a></h2>
+<div class="fd-eyebrow docutils container">
+<p>Origin story</p>
+</div>
+<div class="fd-split fd-split-asymmetric-reverse docutils container">
+<div class="fd-split-text docutils container">
+<p>FlashDreams began as the optimized runtime behind the <a class="reference external" href="https://research.nvidia.com/labs/sil/projects/omnidreams-blog/">OmniDreams
+closed-loop demo for GTC 2026</a>,
+and has grown into a general platform for real-time world-model
+applications — driving simulators, autonomous-vehicle scene
+rollout, embodied robotics, gaming, and virtual environments.</p>
+<p>The same inference pipeline that ships in OmniDreams now hosts
+seven other model families, and the same per-AR-step latency
+targets carry across all of them.</p>
+</div>
+<div class="fd-split-visual docutils container">
+<div class="placeholder admonition">
+<p class="admonition-title">PLACEHOLDER — OmniDreams hero loop</p>
+<p><strong>What goes here:</strong> A short looping clip from the OmniDreams
+multi-view streaming recipe — closed-loop scene rollout,
+multiple simultaneous camera views, generated end-to-end by
+FlashDreams. <code class="docutils literal notranslate"><span class="pre">_static/omnidreams-loop.avif</span></code> (animated AVIF,
+16:9). Until that lands, the <a class="reference internal" href="models/omnidreams.html"><span class="doc">OmniDreams model page</span></a> carries the canonical sample videos.</p>
 </div>
 </div>
 </div>
@@ -530,14 +556,13 @@ variants).</p>
 </div>
 <div class="fd-lede docutils container">
 <p>Streaming recipes generating side-by-side against their upstream
-references. Each loop is &lt; 10s, captured at native resolution; the
-final reel will replace the placeholder tiles below.</p>
+references. Each loop is &lt; 10s, captured at native resolution.</p>
 </div>
 <div class="fd-media-rail docutils container">
 <div class="fd-media-tile docutils container">
 <div class="placeholder admonition">
 <p class="admonition-title">PLACEHOLDER — Self-Forcing T2V loop</p>
-<p>5–10s looping clip of <code class="docutils literal notranslate"><span class="pre">self-forcing-wan2.1-t2v-1.3b-flash</span></code>
+<p>5–10s looping clip of <code class="docutils literal notranslate"><span class="pre">self-forcing-wan2.1-t2v-1.3b-taehv</span></code>
 generating from a held-out prompt. Side-by-side with the
 FastVideo baseline so the wall-clock difference reads
 visually.</p>
@@ -567,25 +592,24 @@ streaming pipeline.</p>
 <p>Library surface</p>
 </div>
 <div class="fd-lede docutils container">
-<p>FlashDreams ships as one <code class="docutils literal notranslate"><span class="pre">uv</span></code>-managed workspace: a core library, an
-infra layer, plugin-friendly recipe registry, and a single CLI front
-door for every shipped model.</p>
+<p>A core library, an infra layer, a plugin-friendly recipe registry,
+and a single command-line front door for every shipped model.</p>
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature fd-feature-hero docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Unified <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code> CLI</div>
-<p class="sd-card-text">One console script dispatches over every in-tree and plugin
-recipe. Every overridable field is a CLI flag; <code class="docutils literal notranslate"><span class="pre">--help</span></code> lists
-every registered runner. New recipes auto-register through
-entry points — no central manifest to keep in sync.</p>
+One CLI for every model</div>
+<p class="sd-card-text">One console script dispatches every shipped recipe. Each model
+is a named slug; every overridable field is a flag. New recipes
+auto-register through entry points — no central manifest, no
+per-model command to remember.</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="api/cli.html"><span class="doc">CLI</span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-6 sd-col-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
@@ -595,7 +619,7 @@ group. The launcher is the single source of truth.</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="api/infra.html"><span class="doc">Infra</span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-6 sd-col-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
@@ -606,7 +630,7 @@ workspace-member packages under <code class="docutils literal notranslate"><span
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="developer_guides/new_integration.html"><span class="doc">Add a new method</span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-6 sd-col-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
@@ -625,11 +649,11 @@ mocked at autodoc time so docs build on CPU-only hosts.</p>
 <p>Eight recipes, one CLI</p>
 </div>
 <div class="fd-lede docutils container">
-<p>Each model below has a walkthrough with the exact
-<code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code> slug, the checkpoint source, and any per-recipe
-knobs. Streaming / autoregressive variants are KV-cached and emit
-per-AR-step output; bidirectional variants are the single
-full-block reference.</p>
+<p>Streaming and autoregressive variants emit per-AR-step output with
+sub-second latency once warm; bidirectional variants are the
+single full-block reference used for parity. Each model page has
+the canonical invocation, the checkpoint source, and the per-recipe
+knobs.</p>
 </div>
 <div class="fd-media-rail fd-media-rail-4 docutils container">
 <div class="fd-media-tile docutils container">
@@ -713,11 +737,30 @@ variant.</p>
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
+FlashVSR</div>
+<p class="sd-card-text">Streaming video super-resolution for the FlashVSR
+checkpoint family.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/flashvsr.html"><span class="doc">FlashVSR</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
 Wan 2.1 (bidirectional)</div>
 <p class="sd-card-text">Bidirectional reference model used for parity testing — T2V
 1.3B / 480p and I2V 14B / 480p.</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="models/wan21.html"><span class="doc">Wan2.1</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Cosmos-Predict2.5 (bidirectional)</div>
+<p class="sd-card-text">Bidirectional Cosmos-Predict2 reference recipes (T2V / I2V, 2B).</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/cosmos_predict2.html"><span class="doc">Cosmos-Predict2.5</span></a></div>
 </div>
 </div>
 </div>
@@ -727,16 +770,21 @@ Wan 2.1 (bidirectional)</div>
 <div class="fd-eyebrow docutils container">
 <p>Same recipe, same hardware</p>
 </div>
+<div class="fd-lede docutils container">
+<p>FlashDreams runs the same model code as the library it integrates
+with — measured in wall-clock at steady state, post-warmup,
+post-graph-capture, post-JIT.</p>
+</div>
 <div class="fd-split fd-split-reverse docutils container">
 <div class="fd-split-text docutils container">
-<p>We rebuild the upstream library’s own runner on identical
-hardware, then run FlashDreams against the same checkpoint and
-sampling configuration. The delta is wall-clock at steady
-state — post warmup, post graph capture, post first-iteration
-JIT compilation. Numbers update with the rolling <code class="docutils literal notranslate"><span class="pre">main</span></code> branch
-whenever a recipe lands a perf change.</p>
-<p>Full methodology — hardware, software pin, sampling knobs,
-what gets timed — lives on the <a class="reference internal" href="benchmarks/index.html"><span class="doc">benchmarks page</span></a>.</p>
+<p>We rebuild the upstream runner on identical hardware, then run
+FlashDreams against the same checkpoint and sampling
+configuration. The delta is what the per-step latency table on
+the benchmarks page shows; numbers update with the rolling
+<code class="docutils literal notranslate"><span class="pre">main</span></code> branch whenever a recipe lands a perf change.</p>
+<p>Full methodology — what gets timed, what we drop as warmup,
+how the upstream baseline is built — lives on the
+<a class="reference internal" href="benchmarks/index.html"><span class="doc">benchmarks page</span></a>.</p>
 </div>
 <div class="fd-split-visual docutils container">
 <div class="placeholder admonition">
@@ -755,18 +803,18 @@ Overlaid wall-clock readout in the bottom-right corner.</p>
 </div>
 <div class="fd-split fd-split-asymmetric docutils container">
 <div class="fd-split-text docutils container">
-<p>FlashDreams is a <a class="reference external" href="https://docs.astral.sh/uv/">uv</a> workspace. The
-CLI lazy-imports <code class="docutils literal notranslate"><span class="pre">mediapy</span></code> + <code class="docutils literal notranslate"><span class="pre">opencv</span></code> for I/O, so install the
-<code class="docutils literal notranslate"><span class="pre">runners</span></code> extra whenever you want to actually generate video.</p>
-<p>The <a class="reference internal" href="quickstart/index.html"><span class="doc">Getting Started</span></a> has the annotated quickstart, an
-end-to-end first-generation walkthrough, and pointers into the
-developer guides for CUDA-graph capture, distributed launching,
-and authoring a custom recipe.</p>
+<p>Sync the workspace, list the shipped recipes, run one. The first
+sync compiles CUDA extensions for your local GPU; once that’s
+done, every recipe is a single command away.</p>
+<p>The <a class="reference internal" href="quickstart/index.html"><span class="doc">Getting Started</span></a> is the annotated walkthrough — fresh
+checkout to a frame on disk on a single GPU. From there the
+<a class="reference internal" href="developer_guides/index.html"><span class="doc">developer guides</span></a> cover the
+pipeline internals, distributed launching, and how to ship a
+custom recipe of your own.</p>
 <div class="fd-callout admonition">
 <p class="admonition-title">New to streaming diffusion?</p>
 <p>Read the <a class="reference internal" href="developer_guides/inference_pipeline_overview.html"><span class="doc">inference pipeline overview</span></a> before
-tweaking recipes — it walks the hot loop a recipe goes
-through, end to end.</p>
+tweaking recipes — it walks the hot loop end to end.</p>
 </div>
 </div>
 <div class="fd-split-visual docutils container">
@@ -776,7 +824,7 @@ uv<span class="w"> </span>run<span class="w"> </span>flashdreams-run<span class=
 <span class="c1"># Single-GPU streaming inference</span>
 <span class="c1"># (Self-Forcing Wan 2.1 T2V).</span>
 uv<span class="w"> </span>run<span class="w"> </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>self-forcing-wan2.1-t2v-1.3b-flash<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>self-forcing-wan2.1-t2v-1.3b-taehv<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--total-blocks<span class="w"> </span><span class="m">7</span>
 </pre></div>
 </div>

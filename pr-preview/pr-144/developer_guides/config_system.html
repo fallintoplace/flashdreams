@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3e2ef050" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=dc159016" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -465,8 +465,8 @@ This configuration system is similar to the one employed in <a class="reference 
 </section>
 <section id="modifying-from-cli">
 <h2>Modifying from CLI<a class="headerlink" href="#modifying-from-cli" title="Link to this heading">#</a></h2>
-<p>Often times, you just want to play with the parameters of an existing model without having to specify a new one. You can easily do so via the CLI, which is powered by <a class="reference external" href="https://github.com/brentyi/tyro">tyro</a>.</p>
-<p>Because our configurations are strongly typed dataclasses, <code class="docutils literal notranslate"><span class="pre">tyro</span></code> automatically generates a comprehensive command-line interface. You can use the <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code> (The CLI carried in FlashDreams) command to dynamically override any nested dataclass field.</p>
+<p>Often you just want to play with the parameters of an existing model without specifying a new configuration. The command-line interface — powered by <a class="reference external" href="https://github.com/brentyi/tyro">tyro</a> — exposes every nested dataclass field as a flag.</p>
+<p>Because configurations are strongly typed dataclasses, <code class="docutils literal notranslate"><span class="pre">tyro</span></code> generates the CLI automatically. Each shipped model is a named runner slug; pass any nested field as a flag to override it.</p>
 <p>For example, to list out all existing configurable parameters for a model:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>flashdreams-run<span class="w"> </span>self-forcing-wan2.1-t2v-1.3b-taehv<span class="w"> </span>--help
 </pre></div>

@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3e2ef050" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=dc159016" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -391,66 +391,83 @@ for where to ask.</p>
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
 <section id="what-hardware-do-i-need-to-run-flashdreams">
 <h3>What hardware do I need to run FlashDreams?<a class="headerlink" href="#what-hardware-do-i-need-to-run-flashdreams" title="Link to this heading">#</a></h3>
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — supported hardware answer</p>
-<p><strong>What goes here:</strong> A short statement of the minimum and
-recommended GPU configurations for inference and for training /
-fine-tuning, with pointers into the <a class="reference internal" href="../benchmarks/index.html"><span class="doc">benchmarks</span></a> section for concrete numbers. Mention which
-compute capabilities are tested.</p>
-</div>
+<p>FlashDreams targets recent NVIDIA data-center GPUs. The profiling
+corpus on the <a class="reference internal" href="../benchmarks/index.html"><span class="doc">benchmarks page</span></a> runs across
+three devices — NVIDIA H100 SXM5, GB200 NVL72, and GB300 — and the
+per-recipe latency numbers on each model page (e.g.
+<a class="reference internal" href="../models/self_forcing.html"><span class="doc">Self-Forcing</span></a>, <a class="reference internal" href="../models/lingbot_world.html"><span class="doc">LingBot-World</span></a>) are sourced
+from the same set.</p>
+<p>Any CUDA-capable GPU with enough memory for the chosen checkpoint
+should run the streaming recipes; smaller GPUs may need to drop
+multi-GPU recipes back to a single device. See the per-recipe
+<code class="docutils literal notranslate"><span class="pre">--total-blocks</span></code> defaults in <a class="reference internal" href="../quickstart/first_world_model.html"><span class="doc">Launch your first model</span></a>
+for the cheapest path to a working clip, and the
+<a class="reference internal" href="../benchmarks/index.html"><span class="doc">benchmarks page</span></a> for the profiled
+configurations.</p>
 </section>
 <section id="which-model-recipes-ship-in-the-box">
 <h3>Which model recipes ship in the box?<a class="headerlink" href="#which-model-recipes-ship-in-the-box" title="Link to this heading">#</a></h3>
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — recipe list</p>
-<p><strong>What goes here:</strong> A concise list with one-line descriptions of
-each shipped recipe (causal-forcing, self-forcing, wan21,
-omnidreams, lingbot-world, fastvideo causal wan22, …) and a link
-into the corresponding model page. Keep in sync with the
-<em>Supported models</em> grid on the landing page.</p>
-</div>
+<p>Eight first-party integrations ship under <code class="docutils literal notranslate"><span class="pre">integrations/</span></code> in the
+repo. The <a class="reference internal" href="../models/index.html"><span class="doc">Models</span></a> gallery has the full list; in summary:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../models/self_forcing.html"><span class="doc">Self-Forcing</span></a> — Streaming Wan 2.1 T2V (1.3B).</p></li>
+<li><p><a class="reference internal" href="../models/causal_forcing.html"><span class="doc">Causal-Forcing</span></a> — Streaming Wan 2.1 T2V / I2V (1.3B).</p></li>
+<li><p><a class="reference internal" href="../models/causal_wan22.html"><span class="doc">Causal Wan2.2</span></a> — FastVideo Causal Wan 2.2 14B MoE T2V.</p></li>
+<li><p><a class="reference internal" href="../models/lingbot_world.html"><span class="doc">LingBot-World</span></a> — Camera-controllable I2V world model.</p></li>
+<li><p><a class="reference internal" href="../models/omnidreams.html"><span class="doc">OmniDreams</span></a> — HDMap-conditioned driving world model
+(the GTC 2026 closed-loop demo).</p></li>
+<li><p><a class="reference internal" href="../models/flashvsr.html"><span class="doc">FlashVSR</span></a> — Streaming video super-resolution.</p></li>
+<li><p><a class="reference internal" href="../models/wan21.html"><span class="doc">Wan2.1</span></a> — Bidirectional Wan 2.1 T2V / I2V reference.</p></li>
+<li><p><a class="reference internal" href="../models/cosmos_predict2.html"><span class="doc">Cosmos-Predict2.5</span></a> — Bidirectional Cosmos-Predict2.5
+T2V / I2V reference.</p></li>
+</ul>
+<p>Each model page has the canonical CLI invocation, checkpoint source,
+multi-GPU command, and per-recipe knobs.</p>
 </section>
 </section>
 <section id="installation-and-packaging">
 <h2>Installation and packaging<a class="headerlink" href="#installation-and-packaging" title="Link to this heading">#</a></h2>
 <section id="why-can-i-install-flashdreams-from-pypi-but-not-the-integration-packages">
 <h3>Why can I install <code class="docutils literal notranslate"><span class="pre">flashdreams</span></code> from PyPI but not the integration packages?<a class="headerlink" href="#why-can-i-install-flashdreams-from-pypi-but-not-the-integration-packages" title="Link to this heading">#</a></h3>
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — packaging answer</p>
-<p><strong>What goes here:</strong> A short explanation that only the core
-<code class="docutils literal notranslate"><span class="pre">flashdreams</span></code> package is published as a wheel; integrations are
-git-installable from the monorepo (with a <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span>
-<span class="pre">&quot;flashdreams-&lt;recipe&gt;</span> <span class="pre">&#64;</span> <span class="pre">git+https://github.com/NVIDIA/flashdreams.git#subdirectory=integrations/&lt;recipe&gt;&quot;</span></code>
-example). Cross-link to <code class="docutils literal notranslate"><span class="pre">DEV.md</span></code> for the rationale.</p>
+<p>Only the core <code class="docutils literal notranslate"><span class="pre">flashdreams</span></code> package is published as a pure-Python
+wheel on PyPI. Integration packages — <code class="docutils literal notranslate"><span class="pre">flashdreams-self-forcing</span></code>,
+<code class="docutils literal notranslate"><span class="pre">flashdreams-lingbot</span></code>, and the others listed in
+<a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/DEV.md">DEV.md</a> —
+are not published; they live under <code class="docutils literal notranslate"><span class="pre">integrations/</span></code> in the monorepo
+and are designed to be consumed either as a workspace member or as
+git-installable packages.</p>
+<p>To install an integration directly from the repo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;flashdreams-wan21 @ git+https://github.com/NVIDIA/flashdreams.git#subdirectory=integrations/wan21&quot;</span>
+
+<span class="c1"># or with uv</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;flashdreams-wan21 @ git+https://github.com/NVIDIA/flashdreams.git#subdirectory=integrations/wan21&quot;</span>
+</pre></div>
 </div>
+<p>The rationale is in <a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/DEV.md">DEV.md</a>: the
+core <code class="docutils literal notranslate"><span class="pre">flashdreams</span></code> is the only stable, pip-installable surface; the
+per-recipe wheels move at the upstream model’s pace and stay
+git-installable so they can pin against a known core commit.</p>
 </section>
 </section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
 <section id="how-do-i-plug-in-a-new-model-recipe">
 <h3>How do I plug in a new model recipe?<a class="headerlink" href="#how-do-i-plug-in-a-new-model-recipe" title="Link to this heading">#</a></h3>
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — new-recipe pointer</p>
-<p><strong>What goes here:</strong> A one-paragraph orientation followed by a link
-to the developer guide at
-<a class="reference internal" href="../developer_guides/new_integration.html"><span class="doc">Add a new method</span></a>. Mention the smallest
-set of abstractions a recipe must implement to plug into
-<code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code>.</p>
-</div>
+<p>The <a class="reference internal" href="../developer_guides/new_integration.html"><span class="doc">Add a new method</span></a> guide walks the full
+flow — what to subclass on the runner side, how the entry-point
+registration works, and what the per-integration directory layout
+looks like. The eight in-tree integrations under <code class="docutils literal notranslate"><span class="pre">integrations/</span></code>
+are the canonical references; pick the one closest in shape to your
+new recipe and use it as a template.</p>
+<p>The minimum surface is: subclass the right runner base, register the
+slug via the <code class="docutils literal notranslate"><span class="pre">flashdreams.runner_configs</span></code> entry point, and (for
+streaming runners) wire <code class="docutils literal notranslate"><span class="pre">--total-blocks</span></code> into the runner config.
+<a class="reference internal" href="../developer_guides/new_integration.html"><span class="doc">Add a new method</span></a> covers each step with the
+exact <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> snippet.</p>
 </section>
 </section>
 <section id="project-and-licensing">
 <h2>Project and licensing<a class="headerlink" href="#project-and-licensing" title="Link to this heading">#</a></h2>
-<section id="is-flashdreams-the-same-project-as-cosmos-nemo-nim">
-<h3>Is FlashDreams the same project as Cosmos / NeMo / NIM?<a class="headerlink" href="#is-flashdreams-the-same-project-as-cosmos-nemo-nim" title="Link to this heading">#</a></h3>
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — relationship to other NVIDIA stacks</p>
-<p><strong>What goes here:</strong> A short, honest answer describing how
-FlashDreams relates to (or doesn’t relate to) other NVIDIA video /
-generative stacks. If there are integration points or shared
-components, name them and link out.</p>
-</div>
-</section>
 <section id="can-i-use-flashdreams-commercially">
 <h3>Can I use FlashDreams commercially?<a class="headerlink" href="#can-i-use-flashdreams-commercially" title="Link to this heading">#</a></h3>
 <p>Yes. FlashDreams is released under the
