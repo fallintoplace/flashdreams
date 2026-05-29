@@ -327,8 +327,6 @@ SPDX-License-Identifier: Apache-2.0
       <section id="flashdreams">
 <h1>FlashDreams<a class="headerlink" href="#flashdreams" title="Link to this heading">#</a></h1>
 <div class="fd-hero fd-hero-band docutils container">
-<div class="fd-split fd-split-asymmetric-reverse docutils container">
-<div class="fd-split-text docutils container">
 <div class="fd-hero-lede docutils container">
 <p>A high-performance inference and serving library for
 interactive autoregressive video and world models.</p>
@@ -339,22 +337,8 @@ interactive autoregressive video and world models.</p>
 <p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference internal" href="community/index.html"><span class="doc">Community</span></a></p>
 </div>
 </div>
-<div class="fd-split-visual docutils container">
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — hero loop</p>
-<p><strong>What goes here:</strong> A short looping clip of a streaming
-recipe (for example <code class="docutils literal notranslate"><span class="pre">self-forcing-wan2.1-t2v-1.3b-taehv</span></code>)
-generating end-to-end, or a stylised diagram of the
-KV cache / ring attention / CUDA-graph pipeline.</p>
-<p><strong>Format:</strong> <code class="docutils literal notranslate"><span class="pre">_static/hero-loop.avif</span></code> (animated AVIF, 16:9).</p>
-</div>
-</div>
-</div>
-</div>
 <section id="why-flashdreams">
 <h2>Why FlashDreams<a class="headerlink" href="#why-flashdreams" title="Link to this heading">#</a></h2>
-<div class="fd-split fd-split-asymmetric docutils container">
-<div class="fd-split-text docutils container">
 <p>FlashDreams is built for the case where a diffusion video model has to
 respond in real time — a closed-loop world-model demo, a driving
 simulator, an interactive scene rollout. The optimisations needed for
@@ -371,17 +355,6 @@ CUDA graph after warmup, collapsing Python and launch overhead in the
 hot loop.</p>
 <p>The library is Apache-2.0 and developed in the open. The internals are
 covered in the <a class="reference internal" href="documentation/index.html"><span class="doc">documentation</span></a>.</p>
-</div>
-<div class="fd-split-visual docutils container">
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — architecture diagram</p>
-<p>Stacked-block diagram showing the three abstractions in the
-hot loop: KV cache, ring attention, and CUDA-graph capture.
-Saved as <code class="docutils literal notranslate"><span class="pre">_static/arch-diagram.svg</span></code> (light and dark
-variants).</p>
-</div>
-</div>
-</div>
 </section>
 <section id="performance">
 <h2>Performance<a class="headerlink" href="#performance" title="Link to this heading">#</a></h2>
@@ -460,36 +433,6 @@ checkout to a generated frame on a single GPU.</p>
 sub-second latency once warm; bidirectional recipes are kept as
 full-block parity references. Each model page carries the canonical
 invocation, the checkpoint source, and the per-recipe knobs.</p>
-<div class="fd-media-rail fd-media-rail-4 docutils container">
-<div class="fd-media-tile docutils container">
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — Self-Forcing sample</p>
-<p>Sample frame from a <code class="docutils literal notranslate"><span class="pre">self-forcing-wan2.1-t2v-1.3b-taehv</span></code>
-generation. Saved as <code class="docutils literal notranslate"><span class="pre">_static/samples/self-forcing.avif</span></code>.</p>
-</div>
-</div>
-<div class="fd-media-tile docutils container">
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — Causal-Forcing sample</p>
-<p>Sample frame from a <code class="docutils literal notranslate"><span class="pre">causal-forcing-wan2.1-t2v-1.3b-framewise</span></code>
-generation. <code class="docutils literal notranslate"><span class="pre">_static/samples/causal-forcing.avif</span></code>.</p>
-</div>
-</div>
-<div class="fd-media-tile docutils container">
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — LingBot-World sample</p>
-<p>Sample frame from the <code class="docutils literal notranslate"><span class="pre">lingbot-world-fast</span></code> camera-controlled
-I2V recipe. <code class="docutils literal notranslate"><span class="pre">_static/samples/lingbot-world.avif</span></code>.</p>
-</div>
-</div>
-<div class="fd-media-tile docutils container">
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — OmniDreams sample</p>
-<p>Sample frame from the OmniDreams multi-view streaming recipe.
-<code class="docutils literal notranslate"><span class="pre">_static/samples/omnidreams.avif</span></code>.</p>
-</div>
-</div>
-</div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
