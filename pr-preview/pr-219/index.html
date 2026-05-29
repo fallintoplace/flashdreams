@@ -1,0 +1,646 @@
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+SPDX-License-Identifier: Apache-2.0
+-->
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FlashDreams &#8212; FlashDreams v0.1.0a3</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=cfa2983f" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="_static/documentation_options.js?v=da35e9cb"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=fd10adb8"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Get Started" href="quickstart/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="v0.1.0a3" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  
+  
+  <body data-default-mode="light" class="fd-page-landing">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a3 - Home"/>
+    <img src="_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a3 - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quickstart/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="benchmarks/index.html">
+    Benchmarks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quickstart/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="benchmarks/index.html">
+    Benchmarks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+  
+    <div class="fd-landing-main">
+      <section id="flashdreams">
+<h1>FlashDreams<a class="headerlink" href="#flashdreams" title="Link to this heading">#</a></h1>
+<div class="fd-hero fd-hero-band docutils container">
+<div class="fd-split fd-split-asymmetric-reverse docutils container">
+<div class="fd-split-text docutils container">
+<div class="fd-hero-lede docutils container">
+<p>A high-performance inference and serving library for
+interactive autoregressive video and world models.</p>
+</div>
+<div class="fd-cta-row docutils container">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference internal" href="quickstart/index.html"><span class="doc">Get started</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference external" href="https://github.com/NVIDIA/flashdreams"><span>GitHub</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference internal" href="community/index.html"><span class="doc">Community</span></a></p>
+</div>
+</div>
+<div class="fd-split-visual docutils container">
+<div class="placeholder admonition">
+<p class="admonition-title">PLACEHOLDER — hero loop</p>
+<p><strong>What goes here:</strong> A short looping clip of a streaming
+recipe (for example <code class="docutils literal notranslate"><span class="pre">self-forcing-wan2.1-t2v-1.3b-taehv</span></code>)
+generating end-to-end, or a stylised diagram of the
+KV cache / ring attention / CUDA-graph pipeline.</p>
+<p><strong>Format:</strong> <code class="docutils literal notranslate"><span class="pre">_static/hero-loop.avif</span></code> (animated AVIF, 16:9).</p>
+</div>
+</div>
+</div>
+</div>
+<section id="why-flashdreams">
+<h2>Why FlashDreams<a class="headerlink" href="#why-flashdreams" title="Link to this heading">#</a></h2>
+<div class="fd-split fd-split-asymmetric docutils container">
+<div class="fd-split-text docutils container">
+<p>FlashDreams is built for the case where a diffusion video model has to
+respond in real time — a closed-loop world-model demo, a driving
+simulator, an interactive scene rollout. The optimisations needed for
+that case are different from those used by an offline, one-shot video
+generator, and FlashDreams organises them into three abstractions that
+every shipped recipe uses.</p>
+<p><strong>KV-cached transformers.</strong> Each autoregressive chunk re-uses prior
+context as a KV cache instead of recomputing it. Self-forcing and
+causal-forcing training regimes are first-class.</p>
+<p><strong>Ring attention.</strong> Context-parallel attention across ranks, so
+long-horizon generation scales out instead of OOM-ing on a single GPU.</p>
+<p><strong>CUDA-graph capture.</strong> The steady-state forward is captured into a
+CUDA graph after warmup, collapsing Python and launch overhead in the
+hot loop.</p>
+<p>The library is Apache-2.0 and developed in the open. The internals are
+covered in the <a class="reference internal" href="documentation/index.html"><span class="doc">documentation</span></a>.</p>
+</div>
+<div class="fd-split-visual docutils container">
+<div class="placeholder admonition">
+<p class="admonition-title">PLACEHOLDER — architecture diagram</p>
+<p>Stacked-block diagram showing the three abstractions in the
+hot loop: KV cache, ring attention, and CUDA-graph capture.
+Saved as <code class="docutils literal notranslate"><span class="pre">_static/arch-diagram.svg</span></code> (light and dark
+variants).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Link to this heading">#</a></h2>
+<p>Each tile shows per-step latency at steady state — post-warmup,
+post-graph-capture — measured against the upstream library’s own
+runner on the same hardware and the same checkpoint. Full methodology
+lives on the <a class="reference internal" href="benchmarks/index.html"><span class="doc">benchmarks page</span></a>.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-4 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<div class="fd-stat docutils container">
+<div class="fd-stat-value docutils container">
+<p>2.12×</p>
+</div>
+<div class="fd-stat-label docutils container">
+<p>Self-Forcing speedup</p>
+</div>
+<div class="fd-stat-note docutils container">
+<p>GB300, vs FastVideo baseline (362 ms → 171 ms per step).</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="fd-stat docutils container">
+<div class="fd-stat-value docutils container">
+<p>3.10×</p>
+</div>
+<div class="fd-stat-label docutils container">
+<p>LingBot-World speedup</p>
+</div>
+<div class="fd-stat-note docutils container">
+<p>H100, vs Official baseline (1950 ms → 629 ms per step).</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="fd-stat docutils container">
+<div class="fd-stat-value docutils container">
+<p>1.40×</p>
+</div>
+<div class="fd-stat-label docutils container">
+<p>Wan2.1 speedup</p>
+</div>
+<div class="fd-stat-note docutils container">
+<p>GB300, vs FastVideo baseline (534 ms → 382 ms per step).</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="fd-stat docutils container">
+<div class="fd-stat-value docutils container">
+<p>8</p>
+</div>
+<div class="fd-stat-label docutils container">
+<p>Integrated models</p>
+</div>
+<div class="fd-stat-note docutils container">
+<p>Streaming and bidirectional recipes, one CLI.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="try-flashdreams">
+<h2>Try FlashDreams<a class="headerlink" href="#try-flashdreams" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="quickstart/index.html"><span class="doc">Get Started guide</span></a> walks from a fresh
+checkout to a generated frame on a single GPU.</p>
+<div class="fd-cta-row docutils container">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference internal" href="quickstart/index.html"><span class="doc">Get started</span></a></p>
+</div>
+</section>
+<section id="supported-models">
+<h2>Supported models<a class="headerlink" href="#supported-models" title="Link to this heading">#</a></h2>
+<p>Streaming and autoregressive recipes emit per-step output with
+sub-second latency once warm; bidirectional recipes are kept as
+full-block parity references. Each model page carries the canonical
+invocation, the checkpoint source, and the per-recipe knobs.</p>
+<div class="fd-media-rail fd-media-rail-4 docutils container">
+<div class="fd-media-tile docutils container">
+<div class="placeholder admonition">
+<p class="admonition-title">PLACEHOLDER — Self-Forcing sample</p>
+<p>Sample frame from a <code class="docutils literal notranslate"><span class="pre">self-forcing-wan2.1-t2v-1.3b-taehv</span></code>
+generation. Saved as <code class="docutils literal notranslate"><span class="pre">_static/samples/self-forcing.avif</span></code>.</p>
+</div>
+</div>
+<div class="fd-media-tile docutils container">
+<div class="placeholder admonition">
+<p class="admonition-title">PLACEHOLDER — Causal-Forcing sample</p>
+<p>Sample frame from a <code class="docutils literal notranslate"><span class="pre">causal-forcing-wan2.1-t2v-1.3b-framewise</span></code>
+generation. <code class="docutils literal notranslate"><span class="pre">_static/samples/causal-forcing.avif</span></code>.</p>
+</div>
+</div>
+<div class="fd-media-tile docutils container">
+<div class="placeholder admonition">
+<p class="admonition-title">PLACEHOLDER — LingBot-World sample</p>
+<p>Sample frame from the <code class="docutils literal notranslate"><span class="pre">lingbot-world-fast</span></code> camera-controlled
+I2V recipe. <code class="docutils literal notranslate"><span class="pre">_static/samples/lingbot-world.avif</span></code>.</p>
+</div>
+</div>
+<div class="fd-media-tile docutils container">
+<div class="placeholder admonition">
+<p class="admonition-title">PLACEHOLDER — OmniDreams sample</p>
+<p>Sample frame from the OmniDreams multi-view streaming recipe.
+<code class="docutils literal notranslate"><span class="pre">_static/samples/omnidreams.avif</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Self-Forcing</div>
+<p class="sd-card-text">Streaming Wan 2.1 T2V via the Self-Forcing plugin. Sub-second
+steps after warmup on H100 / GB200.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/self_forcing.html"><span class="doc">Self-Forcing</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Causal-Forcing</div>
+<p class="sd-card-text">Causal-forcing framewise T2V and I2V variants of Wan 2.1 via
+the Causal-Forcing plugin.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/causal_forcing.html"><span class="doc">Causal-Forcing</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Causal Wan 2.2</div>
+<p class="sd-card-text">FastVideo Wan 2.2 14B causal T2V recipe.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/causal_wan22.html"><span class="doc">Causal Wan2.2</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+LingBot-World</div>
+<p class="sd-card-text">Camera-controlled I2V with bundled prompt, first-frame, and
+camera arrays.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/lingbot_world.html"><span class="doc">LingBot-World</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+OmniDreams</div>
+<p class="sd-card-text">Single-view and multi-view streaming recipes against the
+OmniDreams checkpoints, including a diffusion-forcing AR
+variant.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/omnidreams.html"><span class="doc">OmniDreams</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+FlashVSR</div>
+<p class="sd-card-text">Streaming video super-resolution for the FlashVSR checkpoint
+family.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/flashvsr.html"><span class="doc">FlashVSR</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Wan 2.1 (bidirectional)</div>
+<p class="sd-card-text">Bidirectional reference model used for parity testing — T2V
+1.3B / 480p and I2V 14B / 480p.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/wan21.html"><span class="doc">Wan2.1</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Cosmos-Predict2.5 (bidirectional)</div>
+<p class="sd-card-text">Bidirectional Cosmos-Predict2 reference recipes (T2V / I2V, 2B).</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/cosmos_predict2.html"><span class="doc">Cosmos-Predict2.5</span></a></div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+    </div>
+    
+  
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, NVIDIA Corporation &amp; Affiliates.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NVIDIA/flashdreams" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/nvidiaomniverse" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-discord fa-lg" aria-hidden="true"></i><span class="visually-hidden">Discord</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
