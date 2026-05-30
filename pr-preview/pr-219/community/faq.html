@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>FAQ &#8212; FlashDreams v0.1.0a3</title>
+    <title>&lt;no title&gt; &#8212; FlashDreams v0.1.0a3</title>
   
   
   
@@ -56,7 +56,7 @@ SPDX-License-Identifier: Apache-2.0
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Getting help" href="support.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="support.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="v0.1.0a3" />
@@ -149,21 +149,21 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../quickstart/index.html">
+  <a class="nav-link nav-internal" href="../get_started.html">
     Get Started
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../documentation/index.html">
+  <a class="nav-link nav-internal" href="../documentation.html">
     Documentation
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../benchmarks/index.html">
+  <a class="nav-link nav-internal" href="../benchmarks.html">
     Benchmarks
   </a>
 </li>
@@ -248,21 +248,21 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../quickstart/index.html">
+  <a class="nav-link nav-internal" href="../get_started.html">
     Get Started
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../documentation/index.html">
+  <a class="nav-link nav-internal" href="../documentation.html">
     Documentation
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../benchmarks/index.html">
+  <a class="nav-link nav-internal" href="../benchmarks.html">
     Benchmarks
   </a>
 </li>
@@ -322,112 +322,7 @@ SPDX-License-Identifier: Apache-2.0
         
   
     <div class="fd-landing-main">
-      <section id="faq">
-<h1>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h1>
-<p>Answers to questions that come up repeatedly in the issue tracker
-and on Discord. If you don’t see your question here, check
-<a class="reference internal" href="support.html"><span class="doc">Getting help</span></a> for where to ask.</p>
-<section id="getting-started">
-<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
-<section id="what-hardware-do-i-need-to-run-flashdreams">
-<h3>What hardware do I need to run FlashDreams?<a class="headerlink" href="#what-hardware-do-i-need-to-run-flashdreams" title="Link to this heading">#</a></h3>
-<p>FlashDreams targets recent NVIDIA data-center GPUs. The profiling
-corpus on the <a class="reference internal" href="../benchmarks/index.html"><span class="doc">benchmarks page</span></a> runs across
-three devices — NVIDIA H100 SXM5, GB200 NVL72, and GB300 — and the
-per-recipe latency numbers on each model page (e.g.
-<a class="reference internal" href="../models/self_forcing.html"><span class="doc">Self-Forcing</span></a>, <a class="reference internal" href="../models/lingbot_world.html"><span class="doc">LingBot-World</span></a>) are sourced
-from the same set.</p>
-<p>Any CUDA-capable GPU with enough memory for the chosen checkpoint
-should run the streaming recipes; smaller GPUs may need to drop
-multi-GPU recipes back to a single device. See the
-<a class="reference internal" href="../quickstart/index.html"><span class="doc">Get Started</span></a> for the cheapest path to a working clip,
-and the <a class="reference internal" href="../benchmarks/index.html"><span class="doc">benchmarks page</span></a> for the profiled
-configurations.</p>
-</section>
-<section id="which-model-recipes-ship-in-the-box">
-<h3>Which model recipes ship in the box?<a class="headerlink" href="#which-model-recipes-ship-in-the-box" title="Link to this heading">#</a></h3>
-<p>Eight first-party integrations ship under <code class="docutils literal notranslate"><span class="pre">integrations/</span></code> in the
-repo. The <a class="reference internal" href="../benchmarks/index.html"><span class="doc">Benchmarks</span></a> page has the full list; in summary:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../models/self_forcing.html"><span class="doc">Self-Forcing</span></a> — Streaming Wan 2.1 T2V (1.3B).</p></li>
-<li><p><a class="reference internal" href="../models/causal_forcing.html"><span class="doc">Causal-Forcing</span></a> — Streaming Wan 2.1 T2V / I2V (1.3B).</p></li>
-<li><p><a class="reference internal" href="../models/causal_wan22.html"><span class="doc">Causal Wan2.2</span></a> — FastVideo Causal Wan 2.2 14B MoE T2V.</p></li>
-<li><p><a class="reference internal" href="../models/lingbot_world.html"><span class="doc">LingBot-World</span></a> — Camera-controllable I2V world model.</p></li>
-<li><p><a class="reference internal" href="../models/omnidreams.html"><span class="doc">OmniDreams</span></a> — HDMap-conditioned driving world model
-(the GTC 2026 closed-loop demo).</p></li>
-<li><p><a class="reference internal" href="../models/flashvsr.html"><span class="doc">FlashVSR</span></a> — Streaming video super-resolution.</p></li>
-<li><p><a class="reference internal" href="../models/wan21.html"><span class="doc">Wan2.1</span></a> — Bidirectional Wan 2.1 T2V / I2V reference.</p></li>
-<li><p><a class="reference internal" href="../models/cosmos_predict2.html"><span class="doc">Cosmos-Predict2.5</span></a> — Bidirectional Cosmos-Predict2.5
-T2V / I2V reference.</p></li>
-</ul>
-<p>Each model page has the canonical CLI invocation, checkpoint source,
-multi-GPU command, and per-recipe knobs.</p>
-</section>
-</section>
-<section id="installation-and-packaging">
-<h2>Installation and packaging<a class="headerlink" href="#installation-and-packaging" title="Link to this heading">#</a></h2>
-<section id="why-can-i-install-flashdreams-from-pypi-but-not-the-integration-packages">
-<h3>Why can I install <code class="docutils literal notranslate"><span class="pre">flashdreams</span></code> from PyPI but not the integration packages?<a class="headerlink" href="#why-can-i-install-flashdreams-from-pypi-but-not-the-integration-packages" title="Link to this heading">#</a></h3>
-<p>Only the core <code class="docutils literal notranslate"><span class="pre">flashdreams</span></code> package is published as a pure-Python
-wheel on PyPI. Integration packages — <code class="docutils literal notranslate"><span class="pre">flashdreams-self-forcing</span></code>,
-<code class="docutils literal notranslate"><span class="pre">flashdreams-lingbot</span></code>, and the others listed in
-<a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/DEV.md">DEV.md</a> —
-are not published; they live under <code class="docutils literal notranslate"><span class="pre">integrations/</span></code> in the monorepo
-and are designed to be consumed either as a workspace member or as
-git-installable packages.</p>
-<p>To install an integration directly from the repo:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;flashdreams-wan21 @ git+https://github.com/NVIDIA/flashdreams.git#subdirectory=integrations/wan21&quot;</span>
-
-<span class="c1"># or with uv</span>
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;flashdreams-wan21 @ git+https://github.com/NVIDIA/flashdreams.git#subdirectory=integrations/wan21&quot;</span>
-</pre></div>
-</div>
-<p>The rationale is in <a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/DEV.md">DEV.md</a>: the
-core <code class="docutils literal notranslate"><span class="pre">flashdreams</span></code> is the only stable, pip-installable surface; the
-per-recipe wheels move at the upstream model’s pace and stay
-git-installable so they can pin against a known core commit.</p>
-</section>
-</section>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
-<section id="how-do-i-plug-in-a-new-model-recipe">
-<h3>How do I plug in a new model recipe?<a class="headerlink" href="#how-do-i-plug-in-a-new-model-recipe" title="Link to this heading">#</a></h3>
-<p>The <a class="reference internal" href="../developer_guides/new_integration.html"><span class="doc">Add a new method</span></a> guide walks the full
-flow — what to subclass on the runner side, how the entry-point
-registration works, and what the per-integration directory layout
-looks like. The eight in-tree integrations under <code class="docutils literal notranslate"><span class="pre">integrations/</span></code>
-are the canonical references; pick the one closest in shape to your
-new recipe and use it as a template.</p>
-<p>The minimum surface is: subclass the right runner base, register the
-slug via the <code class="docutils literal notranslate"><span class="pre">flashdreams.runner_configs</span></code> entry point, and (for
-streaming runners) wire <code class="docutils literal notranslate"><span class="pre">--total-blocks</span></code> into the runner config.
-<a class="reference internal" href="../developer_guides/new_integration.html"><span class="doc">Add a new method</span></a> covers each step with the
-exact <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> snippet.</p>
-</section>
-</section>
-<section id="project-and-licensing">
-<h2>Project and licensing<a class="headerlink" href="#project-and-licensing" title="Link to this heading">#</a></h2>
-<section id="can-i-use-flashdreams-commercially">
-<h3>Can I use FlashDreams commercially?<a class="headerlink" href="#can-i-use-flashdreams-commercially" title="Link to this heading">#</a></h3>
-<p>Yes. FlashDreams is released under the
-<a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/LICENSE">Apache License 2.0</a>,
-which permits commercial use, modification, and distribution under the
-license’s terms. Third-party model weights and datasets used with
-FlashDreams may carry their own licenses — please check those
-separately.</p>
-<p>Contributing back is welcome but not required. See
-<a class="reference internal" href="contributing.html"><span class="doc">Contributing to FlashDreams</span></a> if you’d like to upstream a fix or improvement.</p>
-</section>
-</section>
-<section id="don-t-see-your-question">
-<h2>Don’t see your question?<a class="headerlink" href="#don-t-see-your-question" title="Link to this heading">#</a></h2>
-<div class="fd-cta-row docutils container">
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference external" href="https://github.com/NVIDIA/flashdreams/issues"><span>Search the issue tracker</span></a></p>
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference internal" href="support.html"><span class="doc">See all support channels</span></a></p>
-</div>
-</section>
-</section>
-
+      
     </div>
     
   

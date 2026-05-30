@@ -150,21 +150,21 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../quickstart/index.html">
+  <a class="nav-link nav-internal" href="../get_started.html">
     Get Started
   </a>
 </li>
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../documentation/index.html">
+  <a class="nav-link nav-internal" href="../documentation.html">
     Documentation
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../benchmarks/index.html">
+  <a class="nav-link nav-internal" href="../benchmarks.html">
     Benchmarks
   </a>
 </li>
@@ -253,21 +253,21 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../quickstart/index.html">
+  <a class="nav-link nav-internal" href="../get_started.html">
     Get Started
   </a>
 </li>
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../documentation/index.html">
+  <a class="nav-link nav-internal" href="../documentation.html">
     Documentation
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../benchmarks/index.html">
+  <a class="nav-link nav-internal" href="../benchmarks.html">
     Benchmarks
   </a>
 </li>
@@ -319,8 +319,6 @@ SPDX-License-Identifier: Apache-2.0
 <li class="toctree-l2"><a class="reference internal" href="inference_pipeline_overview.html">Inference pipeline overview</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Config system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="new_integration.html">Add a new method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage_patterns.html">How to use FlashDreams as a developer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interactive_serving.html">Interactive serving</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">CLI and API reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -374,10 +372,10 @@ SPDX-License-Identifier: Apache-2.0
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../documentation/index.html" class="nav-link">Documentation</a></li>
+    <li class="breadcrumb-item"><a href="../documentation.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Developer Guides</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Developer guides</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Config system</span></li>
   </ul>
@@ -478,8 +476,8 @@ This configuration system is similar to the one employed in <a class="reference 
 </section>
 <section id="modifying-from-cli">
 <h2>Modifying from CLI<a class="headerlink" href="#modifying-from-cli" title="Link to this heading">#</a></h2>
-<p>Often you just want to play with the parameters of an existing model without specifying a new configuration. The command-line interface — powered by <a class="reference external" href="https://github.com/brentyi/tyro">tyro</a> — exposes every nested dataclass field as a flag.</p>
-<p>Because configurations are strongly typed dataclasses, <code class="docutils literal notranslate"><span class="pre">tyro</span></code> generates the CLI automatically. Each shipped model is a named runner slug; pass any nested field as a flag to override it.</p>
+<p>Often times, you just want to play with the parameters of an existing model without having to specify a new one. You can easily do so via the CLI, which is powered by <a class="reference external" href="https://github.com/brentyi/tyro">tyro</a>.</p>
+<p>Because our configurations are strongly typed dataclasses, <code class="docutils literal notranslate"><span class="pre">tyro</span></code> automatically generates a comprehensive command-line interface. You can use the <code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code> (The CLI carried in FlashDreams) command to dynamically override any nested dataclass field.</p>
 <p>For example, to list out all existing configurable parameters for a model:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>flashdreams-run<span class="w"> </span>self-forcing-wan2.1-t2v-1.3b-taehv<span class="w"> </span>--help
 </pre></div>
