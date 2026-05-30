@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Developer Guides &#8212; FlashDreams v0.1.0a3</title>
+    <title>Developer guides &#8212; FlashDreams v0.1.0a3</title>
   
   
   
@@ -319,8 +319,6 @@ SPDX-License-Identifier: Apache-2.0
 <li class="toctree-l2"><a class="reference internal" href="inference_pipeline_overview.html">Inference pipeline overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config_system.html">Config system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="new_integration.html">Add a new method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage_patterns.html">How to use FlashDreams as a developer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interactive_serving.html">Interactive serving</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">CLI and API reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -376,7 +374,7 @@ SPDX-License-Identifier: Apache-2.0
     
     <li class="breadcrumb-item"><a href="../documentation.html" class="nav-link">Documentation</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Developer Guides</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Developer guides</span></li>
   </ul>
 </nav>
 </div>
@@ -394,81 +392,17 @@ SPDX-License-Identifier: Apache-2.0
                 <article class="bd-article">
                   
   <section id="developer-guides">
-<h1>Developer Guides<a class="headerlink" href="#developer-guides" title="Link to this heading">#</a></h1>
-<p>These guides cover how the system is structured underneath the CLI:
-the inference pipeline a recipe runs through, the configuration layer
-every recipe shares, the integration surface for adding a new method,
-common patterns for driving the pipeline from Python, and the shape
-of an interactive serving session. They are conceptual; the
-<a class="reference internal" href="../api/index.html"><span class="doc">API reference</span></a> is the per-symbol reference.</p>
-<p>The pipeline overview is the anchor for the rest. The config system
-is the layer every recipe shares; new integrations sit on top of
-both. Usage patterns and interactive serving describe how the
-pipeline is embedded in surrounding code.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Inference pipeline overview</div>
-<p class="sd-card-text">The end-to-end computation flow: warmup, CUDA-graph capture,
-the autoregressive-step body, the ring-attention shard group,
-and finalize. The mental model the rest of the project assumes.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference internal" href="inference_pipeline_overview.html"><span class="doc">Inference pipeline overview</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Config system</div>
-<p class="sd-card-text">How every overridable field is surfaced as a CLI flag, how
-recipe defaults compose, and how to layer overrides on top.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference internal" href="config_system.html"><span class="doc">Config system</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Add a new method</div>
-<p class="sd-card-text">The entry-point surface a new recipe ships against: what to
-subclass, what to register, and where the parity tests live.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference internal" href="new_integration.html"><span class="doc">Add a new method</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Usage patterns</div>
-<p class="sd-card-text">Common ways to drive FlashDreams from Python: the CLI, the
-in-process runner API, and the pipeline-level surface for
-embedding.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference internal" href="usage_patterns.html"><span class="doc">How to use FlashDreams as a developer</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Interactive serving</div>
-<p class="sd-card-text">Keeping a streaming session alive: warmup, steady-state
-generation, and how the WebRTC and gRPC servers under
-<code class="docutils literal notranslate"><span class="pre">integrations/</span></code> wire the pipeline up.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference internal" href="interactive_serving.html"><span class="doc">Interactive serving</span></a></div>
-</div>
-</div>
-</div>
-<section id="where-these-guides-fit">
-<h2>Where these guides fit<a class="headerlink" href="#where-these-guides-fit" title="Link to this heading">#</a></h2>
-<p>Working forward from a recipe, start with the pipeline overview,
-then read the recipe’s per-model page under <a class="reference internal" href="../benchmarks.html"><span class="doc">Benchmarks</span></a>,
-then drop into the matching module under <a class="reference internal" href="../api/index.html"><span class="doc">API reference</span></a> for the
-implementation details. The <a class="reference internal" href="../get_started.html"><span class="doc">Get Started</span></a> covers the
-two-command path from install to a generated clip.</p>
+<h1>Developer guides<a class="headerlink" href="#developer-guides" title="Link to this heading">#</a></h1>
+<p>Use these guides after the quick start to understand the runtime, choose a
+developer workflow, configure runs, build serving applications, or add a new
+model integration.</p>
+<section id="guides">
+<h2>Guides<a class="headerlink" href="#guides" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="inference_pipeline_overview.html"><span class="doc">Inference pipeline overview</span></a></p></li>
+<li><p><a class="reference internal" href="config_system.html"><span class="doc">Config system</span></a></p></li>
+<li><p><a class="reference internal" href="new_integration.html"><span class="doc">Add a new method</span></a></p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -521,7 +455,7 @@ two-command path from install to a generated clip.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-these-guides-fit">Where these guides fit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guides">Guides</a></li>
 </ul>
   </nav></div>
 
