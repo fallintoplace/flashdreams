@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>FlashDreams &#8212; FlashDreams v0.1.0a3</title>
+    <title>FlashDreams &#8212; FlashDreams v0.1.0a4</title>
   
   
   
@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=cfa2983f" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6534aa71" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: Apache-2.0
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
-    <script src="_static/documentation_options.js?v=da35e9cb"></script>
+    <script src="_static/documentation_options.js?v=11bc7906"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,7 +59,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="next" title="Get Started" href="get_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="v0.1.0a3" />
+  <meta name="docsearch:version" content="v0.1.0a4" />
   
     
     <script src="_static/searchtools.js"></script>
@@ -132,8 +132,8 @@ SPDX-License-Identifier: Apache-2.0
     
     
     
-    <img src="_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a3 - Home"/>
-    <img src="_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a3 - Home"/>
+    <img src="_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a4 - Home"/>
+    <img src="_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a4 - Home"/>
   
   
 </a></div>
@@ -327,8 +327,6 @@ SPDX-License-Identifier: Apache-2.0
       <section id="flashdreams">
 <h1>FlashDreams<a class="headerlink" href="#flashdreams" title="Link to this heading">#</a></h1>
 <div class="fd-hero fd-hero-band docutils container">
-<div class="fd-split fd-split-asymmetric-reverse docutils container">
-<div class="fd-split-text docutils container">
 <div class="fd-hero-lede docutils container">
 <p>A high-performance inference and serving library for
 interactive autoregressive video and world models.</p>
@@ -338,19 +336,45 @@ interactive autoregressive video and world models.</p>
 <p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference external" href="https://github.com/NVIDIA/flashdreams"><span>GitHub</span></a></p>
 <p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference internal" href="community/index.html"><span class="doc">Community</span></a></p>
 </div>
+<div class="fd-promo-video-wrap">
+  <video
+    class="fd-promo-video-player"
+    controls
+    playsinline
+    preload="metadata"
+    aria-label="FlashDreams quick intro video">
+    <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/promo_video/flashdreams-promo-hq-6-720P.mp4" type="video/mp4">
+  </video>
+  <button class="fd-promo-play" type="button" aria-label="Play FlashDreams quick intro video">
+    <span class="fd-promo-play-icon" aria-hidden="true"></span>
+  </button>
 </div>
-<div class="fd-split-visual docutils container">
-<div class="placeholder admonition">
-<p class="admonition-title">PLACEHOLDER — hero loop</p>
-<p><strong>What goes here:</strong> A short looping clip of a streaming
-recipe (for example <code class="docutils literal notranslate"><span class="pre">self-forcing-wan2.1-t2v-1.3b-taehv</span></code>)
-generating end-to-end, or a stylised diagram of the
-KV cache / ring attention / CUDA-graph pipeline.</p>
-<p><strong>Format:</strong> <code class="docutils literal notranslate"><span class="pre">_static/hero-loop.avif</span></code> (animated AVIF, 16:9).</p>
-</div>
-</div>
-</div>
-</div>
+<script>
+  (() => {
+    const script = document.currentScript;
+    const container = script ? script.previousElementSibling : null;
+    if (!container) {
+      return;
+    }
+    const video = container.querySelector(".fd-promo-video-player");
+    const playButton = container.querySelector(".fd-promo-play");
+    if (!video || !playButton) {
+      return;
+    }
+    const showOverlay = () => container.classList.remove("is-playing");
+    const hideOverlay = () => container.classList.add("is-playing");
+    playButton.addEventListener("click", () => {
+      video.controls = true;
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(showOverlay);
+      }
+    });
+    video.addEventListener("play", hideOverlay);
+    video.addEventListener("pause", showOverlay);
+    video.addEventListener("ended", showOverlay);
+  })();
+</script></div>
 <section id="why-flashdreams">
 <h2>Why FlashDreams<a class="headerlink" href="#why-flashdreams" title="Link to this heading">#</a></h2>
 <div class="fd-split fd-split-asymmetric docutils container">
