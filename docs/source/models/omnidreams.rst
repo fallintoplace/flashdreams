@@ -27,7 +27,7 @@ NVIDIA OmniDreams
 
 OmniDreams is a HDMap-conditioned world model for single-view and multi-view
 driving generation, with presets that balance visual fidelity and runtime
-throughput.
+throughput. OmniDreams requires a CUDA GPU with at least 30 GB of VRAM.
 
 .. raw:: html
 
