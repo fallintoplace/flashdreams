@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Installation &#8212; FlashDreams v0.1.0a4</title>
+    <title>Installation &#8212; FlashDreams v0.1.0rc1</title>
   
   
   
@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6534aa71" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=9c7c7352" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: Apache-2.0
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
-    <script src="../_static/documentation_options.js?v=11bc7906"></script>
+    <script src="../_static/documentation_options.js?v=944ffb79"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,13 +54,14 @@ SPDX-License-Identifier: Apache-2.0
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'quickstart/installation';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/image_zoom.js?v=ada83164"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Launch your first model" href="first_world_model.html" />
     <link rel="prev" title="Get Started" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="v0.1.0a4" />
+  <meta name="docsearch:version" content="v0.1.0rc1" />
   
     
     <script src="../_static/searchtools.js"></script>
@@ -133,8 +134,8 @@ SPDX-License-Identifier: Apache-2.0
     
     
     
-    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a4 - Home"/>
-    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a4 - Home"/>
+    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0rc1 - Home"/>
+    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0rc1 - Home"/>
   
   
 </a></div>
@@ -358,22 +359,9 @@ uv<span class="w"> </span>sync<span class="w"> </span>--extra<span class="w"> </
 <span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>~/.cache/huggingface<span class="w">  </span><span class="c1"># optional</span>
 </pre></div>
 </div>
-<section id="speeding-up-cuda-builds">
-<span id="build-performance"></span><h3>Speeding up CUDA builds<a class="headerlink" href="#speeding-up-cuda-builds" title="Link to this heading">#</a></h3>
-<p>The first <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span></code> compiles CUDA extensions from source, which can be
-slow. Set these variables to only compile for your local GPU architecture:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_ARCH</span><span class="o">=</span><span class="k">$(</span>nvidia-smi<span class="w"> </span>--query-gpu<span class="o">=</span>compute_cap<span class="w"> </span>--format<span class="o">=</span>csv,noheader<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">NVTE_CUDA_ARCHS</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CUDA_ARCH</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">BLOCK_SPARSE_ATTN_CUDA_ARCHS</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CUDA_ARCH</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MAX_JOBS</span><span class="o">=</span><span class="m">8</span>
-</pre></div>
-</div>
-<p>See the <a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/CONTRIBUTING.md#speeding-up-local-builds">Contributing Guide</a>
-for full details on each variable and recommended <code class="docutils literal notranslate"><span class="pre">.envrc</span></code> setup.</p>
 <p>For more environment and container details, see the project
 <a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/README.md">README</a> and
 the model pages under <a class="reference internal" href="../benchmarks.html"><span class="doc">Benchmarks</span></a>.</p>
-</section>
 </section>
 </section>
 
