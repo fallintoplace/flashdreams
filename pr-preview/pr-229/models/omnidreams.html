@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>OmniDreams &#8212; FlashDreams v0.1.0a3</title>
+    <title>NVIDIA OmniDreams &#8212; FlashDreams v0.1.0rc1</title>
   
   
   
@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cfa2983f" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=4cf6070d" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: Apache-2.0
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
-    <script src="../_static/documentation_options.js?v=da35e9cb"></script>
+    <script src="../_static/documentation_options.js?v=944ffb79"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,13 +54,14 @@ SPDX-License-Identifier: Apache-2.0
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'models/omnidreams';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/image_zoom.js?v=ada83164"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Wan2.1" href="wan21.html" />
     <link rel="prev" title="LingBot-World" href="lingbot_world.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="v0.1.0a3" />
+  <meta name="docsearch:version" content="v0.1.0rc1" />
   
     
     <script src="../_static/searchtools.js"></script>
@@ -133,8 +134,8 @@ SPDX-License-Identifier: Apache-2.0
     
     
     
-    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a3 - Home"/>
-    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a3 - Home"/>
+    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0rc1 - Home"/>
+    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0rc1 - Home"/>
   
   
 </a></div>
@@ -150,7 +151,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../get_started.html">
+  <a class="nav-link nav-internal" href="../quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -164,7 +165,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="index.html">
     Benchmarks
   </a>
 </li>
@@ -249,7 +250,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../get_started.html">
+  <a class="nav-link nav-internal" href="../quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -263,7 +264,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="index.html">
     Benchmarks
   </a>
 </li>
@@ -323,13 +324,14 @@ SPDX-License-Identifier: Apache-2.0
         
   
     <div class="fd-landing-main">
-      <section id="omnidreams">
-<h1>OmniDreams<a class="headerlink" href="#omnidreams" title="Link to this heading">#</a></h1>
+      <section id="nvidia-omnidreams">
+<h1>NVIDIA OmniDreams<a class="headerlink" href="#nvidia-omnidreams" title="Link to this heading">#</a></h1>
 <div class="model-link-row">
   <a class="model-link-button" href="https://research.nvidia.com/labs/sil/projects/omnidreams-blog/" target="_blank" rel="noopener noreferrer">Blog page</a>
+  <a class="model-link-button" href="https://research.nvidia.com/labs/sil/projects/omnidreams-blog/paper.pdf" target="_blank" rel="noopener noreferrer">Tech report</a>
   <a class="model-link-button" href="https://huggingface.co/nvidia/omni-dreams-models/" target="_blank" rel="noopener noreferrer">Model page</a>
-  <a class="model-link-button" href="https://gitlab-master.nvidia.com/sil/omni-dreams/" target="_blank" rel="noopener noreferrer">Official code</a>
-</div><p>OmniDreams is an HDMap-conditioned world model for single-view and multi-view
+  <a class="model-link-button" href="https://github.com/NVIDIA/flashdreams/tree/main/integrations/omnidreams" target="_blank" rel="noopener noreferrer">Official code</a>
+</div><p>OmniDreams is a HDMap-conditioned world model for single-view and multi-view
 driving generation, with presets that balance visual fidelity and runtime
 throughput.</p>
 <div class="model-video-card" style="width: 100%; margin: 10px auto 14px;">
@@ -350,8 +352,8 @@ uv<span class="w"> </span>sync<span class="w"> </span>--project<span class="w"> 
 </section>
 <section id="running-the-method">
 <h2>Running the method<a class="headerlink" href="#running-the-method" title="Link to this heading">#</a></h2>
-<p>To run OmniDreams, launch one of the registered runner slugs. For
-example:</p>
+<p>To run OmniDreams, launch one of the registered runner slugs via
+<code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code>. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>integrations/omnidreams<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>omnidreams-sv-2steps-chunk2-loc6-lightvae-lighttae-perf<span class="w"> </span><span class="se">\</span>
@@ -397,11 +399,11 @@ example:</p>
 </pre></div>
 </div>
 <p>Some generated samples from the above commands:</p>
-<div class="model-video-grid">
+<div class="model-video-grid zoomable">
   <div class="model-video-card">
     <!-- <div class="model-video-placeholder">Video placeholder</div> -->
     <video class="model-video-player" autoplay muted loop playsinline preload="metadata">
-      <source src="https://research-staging.nvidia.com/labs/sil/projects/flashdreams/assets/omnidreams/omnidreams-sv-2steps-chunk2-loc6-lightvae-lighttae-239560dc-33d1-11ef-9720-00044bcbccac-pip.mp4" type="video/mp4">
+      <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/omnidreams/omnidreams-sv-2steps-chunk2-loc6-lightvae-lighttae-239560dc-33d1-11ef-9720-00044bcbccac-pip.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="model-video-overlay">
@@ -411,7 +413,7 @@ example:</p>
   <div class="model-video-card">
     <!-- <div class="model-video-placeholder">Video placeholder</div> -->
     <video class="model-video-player" autoplay muted loop playsinline preload="metadata">
-      <source src="https://research-staging.nvidia.com/labs/sil/projects/flashdreams/assets/omnidreams/omnidreams-sv-2steps-chunk2-loc6-lightvae-lighttae-24b84744-4156-11ef-b27d-00044bf655de-pip.mp4" type="video/mp4">
+      <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/omnidreams/omnidreams-sv-2steps-chunk2-loc6-lightvae-lighttae-24b84744-4156-11ef-b27d-00044bf655de-pip.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="model-video-overlay">
@@ -419,30 +421,152 @@ example:</p>
     </div>
   </div>
 </div></section>
-<section id="launch-the-interactive-server">
-<h2>Launch the interactive server<a class="headerlink" href="#launch-the-interactive-server" title="Link to this heading">#</a></h2>
-<p>Spin up the interactive single-view OmniDreams server via WebRTC:</p>
+<section id="launch-the-interactive-demo">
+<h2>Launch the interactive demo<a class="headerlink" href="#launch-the-interactive-demo" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">interactive-drive</span></code> runs the OmniDreams single-view pipeline in a
+single process and streams the camera view to your browser. The demo
+machine only needs a CUDA-capable GPU – no graphics-capable GPU,
+display server, or Vulkan support are required.</p>
+<p>The demo requires access to <a class="reference external" href="https://github.com/NVIDIA/flashdreams">NVIDIA/flashdreams</a>
+and an <code class="docutils literal notranslate"><span class="pre">HF_TOKEN</span></code> with read access to
+<a class="reference external" href="https://huggingface.co/datasets/nvidia/omni-dreams-scenes">nvidia/omni-dreams-scenes</a>
+(scene USDZs) and
+<a class="reference external" href="https://huggingface.co/nvidia/omni-dreams-models">nvidia/omni-dreams-models</a>
+(checkpoints).</p>
+<p>First-time setup:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/NVIDIA/flashdreams.git
+<span class="nb">cd</span><span class="w"> </span>flashdreams
+<span class="nb">export</span><span class="w"> </span><span class="nv">HF_TOKEN</span><span class="o">=</span>&lt;your-hf-token&gt;
+uv<span class="w"> </span>sync<span class="w"> </span>--package<span class="w"> </span>flashdreams-omnidreams<span class="w"> </span>--extra<span class="w"> </span>interactive-drive
+</pre></div>
+</div>
+<p>Optionally, pre-download scenes and checkpoints so the first launch
+isn’t blocked on network I/O:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--package<span class="w"> </span>flashdreams-omnidreams<span class="w"> </span>omnidreams-prepare
+</pre></div>
+</div>
+<p>Run the demo and stream to your browser:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--package<span class="w"> </span>flashdreams-omnidreams<span class="w"> </span>interactive-drive<span class="w"> </span>--stream-mjpeg<span class="w"> </span>:8080
+</pre></div>
+</div>
+<p>Then open <code class="docutils literal notranslate"><span class="pre">http://&lt;server-ip&gt;:8080/</span></code> in any browser on the same
+network and pick a scene from the picker in the bottom-right.</p>
+<p>For execution using a consumer NVIDIA GPU that exposes a graphics stack,
+omit the <code class="docutils literal notranslate"><span class="pre">--stream-mjpeg</span></code> flag to open the demo in a local Vulkan window
+instead:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--package<span class="w"> </span>flashdreams-omnidreams<span class="w"> </span>interactive-drive
+</pre></div>
+</div>
+<p>The local window’s HUD adds a weather-variant selector (clear, rain, snow)
+next to the scene picker, so the same scene can be switched between
+conditions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The local window requires a display server and the system OpenGL /
+Vulkan client libraries. On Debian/Ubuntu:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libx11-6<span class="w"> </span>libxcb1<span class="w"> </span>libgl1<span class="w"> </span>libglx-mesa0<span class="w"> </span>libvulkan1
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">Failed</span> <span class="pre">to</span> <span class="pre">initialize</span> <span class="pre">GLFW</span></code> error indicates the display or one of these
+libraries are missing.</p>
+</div>
+<section id="steering-wheel-and-game-controller">
+<h3>Steering wheel and game controller<a class="headerlink" href="#steering-wheel-and-game-controller" title="Link to this heading">#</a></h3>
+<p>A steering wheel or game controller can be used to control the local window mode.
+Any device that Ubuntu detects as a standard game controller
+or joystick is viable. We provide a configuration tool to calibrate these:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--package<span class="w"> </span>flashdreams-omnidreams<span class="w"> </span>interactive-drive-configuration
+</pre></div>
+</div>
+<p>The demo loads the saved profile automatically on subsequent launches.
+Re-run the configuration tool to specify the default profile, edit a profile
+(steering sensitivity, deadzone, buttons), or delete a profile.</p>
+</section>
+<section id="native-acceleration-perf-manifest">
+<h3>Native acceleration (perf manifest)<a class="headerlink" href="#native-acceleration-perf-manifest" title="Link to this heading">#</a></h3>
+<p>The bundled <code class="docutils literal notranslate"><span class="pre">example_world_model_perf.yaml</span></code> manifest runs the DiT and
+LightVAE through the OmniDreams single-view CUDA extension
+(<code class="docutils literal notranslate"><span class="pre">native_dit_acceleration:</span> <span class="pre">required</span></code>), which is faster than the default
+PyTorch path. The extension builds against pinned checkouts of CUTLASS,
+SageAttention, SpargeAttn, and cudnn-frontend that are not vendored in the
+repo. <code class="docutils literal notranslate"><span class="pre">omnidreams-prepare</span> <span class="pre">--perf</span></code> clones them at their pinned commits into
+<code class="docutils literal notranslate"><span class="pre">integrations/omnidreams/omnidreams_singleview/3rdparty/</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--package<span class="w"> </span>flashdreams-omnidreams<span class="w"> </span>omnidreams-prepare<span class="w"> </span>--perf
+</pre></div>
+</div>
+<p>This step only syncs sources; the extension itself compiles on the first
+launch that uses the manifest (one-time, a few minutes). It requires a
+Blackwell-class GPU (SM 12.0) or newer, a source checkout (the
+<code class="docutils literal notranslate"><span class="pre">omnidreams_singleview</span></code> sources ship only in the git tree, not the wheel),
+<code class="docutils literal notranslate"><span class="pre">git</span></code>, and a CUDA toolchain (<code class="docutils literal notranslate"><span class="pre">nvcc</span></code>) matching your PyTorch build. Then
+point the demo at the perf manifest:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--package<span class="w"> </span>flashdreams-omnidreams<span class="w"> </span>interactive-drive<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--manifest<span class="w"> </span>example_world_model_perf.yaml
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">native_dit_acceleration:</span> <span class="pre">required</span></code> makes the manifest fail loudly if the
+extension can’t build or load, rather than silently falling back to PyTorch.</p>
+</section>
+</section>
+<section id="alternative-webrtc-server">
+<h2>Alternative: WebRTC server<a class="headerlink" href="#alternative-webrtc-server" title="Link to this heading">#</a></h2>
+<p>For deployments that require a richer browser frontend with WebRTC’s
+lower video-delivery latency and a streaming gRPC service for
+multi-client setups, the standalone server at
+<code class="docutils literal notranslate"><span class="pre">omnidreams.webrtc.server</span></code> ships a polished HTML5 client on top of
+the same OmniDreams pipeline. The MJPEG path above is the
+recommended starting point for most users; consider WebRTC if you
+need bidirectional camera-control APIs or are already integrating
+the gRPC service into a larger product.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># from the repo root</span>
 uv<span class="w"> </span>run<span class="w"> </span>--package<span class="w"> </span>flashdreams-omnidreams<span class="w"> </span>torchrun<span class="w"> </span>--nproc_per_node<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-m<span class="w"> </span>omnidreams.webrtc.server<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8089</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--pipeline_config_name<span class="w"> </span>omnidreams-sv-2steps-chunk2-loc6-lightvae-lighttae-perf<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--scene-uuid<span class="w"> </span><span class="s2">&quot;065dcac9-ee67-4434-a835-c6b816c88e48&quot;</span>
+<span class="w">    </span>--scene-uuid<span class="w"> </span><span class="s2">&quot;0d404ff7-2b66-498c-b047-1ed8cded60d4&quot;</span>
 </pre></div>
 </div>
 <p>Sample scene UUIDs for the interactive server are available in the
-<a class="reference external" href="https://huggingface.co/datasets/nvidia/omni-dreams-scenes/tree/main/scenes">nvidia/omni-dreams-scenes Hugging Face dataset</a>.</p>
-<p>The server may take a few minutes to warm up. When it is ready, it prints
+<a class="reference external" href="https://huggingface.co/datasets/nvidia/omni-dreams-scenes/tree/main/scenes">nvidia/omni-dreams-scenes Hugging Face dataset</a>.
+Each scene ships clear, rain, and snow weather variants as sibling
+archives; add <code class="docutils literal notranslate"><span class="pre">--scene-variant</span> <span class="pre">rain</span></code> (or <code class="docutils literal notranslate"><span class="pre">snow</span></code>) to serve a specific
+one (the default is the clear-weather scene).</p>
+<p>The server may take a few minutes to warm up. Once ready, it prints
 <code class="docutils literal notranslate"><span class="pre">Connect</span> <span class="pre">via</span> <span class="pre">http://&lt;server-ip&gt;:8089/request_session</span></code>.
 Here, <code class="docutils literal notranslate"><span class="pre">&lt;server-ip&gt;</span></code> is the server IP address you are connecting to
 (can use <code class="docutils literal notranslate"><span class="pre">localhost</span></code> when running locally).</p>
-<p>When successfully connected, the browser-based UI looks like this:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On a remote or cloud GPU instance (e.g. <a class="reference external" href="https://www.brev.dev/">Brev</a>),
+the server port is usually not reachable at the host IP directly.
+Forward it to your local machine first, then open
+<code class="docutils literal notranslate"><span class="pre">http://localhost:8089/request_session</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Brev</span>
+brev<span class="w"> </span>port-forward<span class="w"> </span>&lt;instance&gt;<span class="w"> </span>-p<span class="w"> </span><span class="m">8089</span>:8089
+<span class="c1"># or plain SSH</span>
+ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">8089</span>:localhost:8089<span class="w"> </span>&lt;user&gt;@&lt;host&gt;
+</pre></div>
+</div>
+</div>
+<p>Once successfully connected, the browser-based UI looks like this:</p>
 <div class="model-video-card" style="width: 100%; margin: 10px auto 14px;">
   <video class="model-video-player" autoplay muted loop playsinline preload="metadata">
-    <source src="https://research.nvidia.com/labs/sil/projects/alpadreams/assets/omnidreams/omnidreams-demo-0524-720P.mp4" type="video/mp4">
+    <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/omnidreams/omnidreams-webrtc-recording-0529.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-</div></section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">/request_session</span></code> loads but the video never appears, the
+browser is likely obfuscating local IPs in WebRTC ICE candidates
+(replacing them with mDNS <code class="docutils literal notranslate"><span class="pre">.local</span></code> hostnames), which prevents the
+peer connection from completing. Disable the setting and reload:</p>
+<ul class="simple">
+<li><p><strong>Chrome / Edge:</strong> <code class="docutils literal notranslate"><span class="pre">chrome://flags/#enable-webrtc-hide-local-ips-with-mdns</span></code> → <strong>Disabled</strong>, then restart the browser.</p></li>
+<li><p><strong>Brave:</strong> <code class="docutils literal notranslate"><span class="pre">brave://settings/privacy/security</span></code> → <em>WebRTC IP handling policy</em> → <strong>Default public and private interfaces</strong>.</p></li>
+<li><p><strong>Firefox:</strong> <code class="docutils literal notranslate"><span class="pre">about:config</span></code> → <code class="docutils literal notranslate"><span class="pre">media.peerconnection.ice.obfuscate_host_addresses</span></code> → <strong>false</strong>.</p></li>
+</ul>
+</div>
+</section>
 <section id="performance-table">
 <h2>Performance table<a class="headerlink" href="#performance-table" title="Link to this heading">#</a></h2>
 <p>Single-view latency on NVIDIA GB300 at <code class="docutils literal notranslate"><span class="pre">704</span> <span class="pre">x</span> <span class="pre">1280</span></code> resolution.</p>
@@ -505,6 +629,19 @@ Here, <code class="docutils literal notranslate"><span class="pre">&lt;server-ip
 <p class="model-footnote">
    KV-cache Update is off the hot path and excluded from Total.
 </p></section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
+<p>If you use OmniDreams, please cite the original work:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@misc</span><span class="p">{</span><span class="nl">nvidia2026omnidreams</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{OmniDreams: Real-Time Generative Closed-Loop Autonomous Vehicle Simulation Built on NVIDIA Cosmos}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Basant, Aarti and Kar, Amlan and Paschalidou, Despoina and Garcia Cobo, Guillermo and Turki, Haithem and Ling, Huan and Seo, Jaewoo and Wang, Jialiang and Lucas, James and Wu, Jay and Lorraine, Jonathan and Gao, Jun and He, Kai and Tothova, Katarina and Xie, Kevin and Tyszkiewicz, Michal and Wu, Qi and de Lutio, Riccardo and Li, Ruilong and Fidler, Sanja and Kim, Seung Wook and Shen, Tianchang and Cao, Tianshi and Pfaff, Tobias and Lew, William and Ren, Xuanchi and Lu, Yifan and Gojcic, Zan and Wang, Zian}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2026}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">note</span><span class="p">=</span><span class="s">{Technical report}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">howpublished</span><span class="p">=</span><span class="s">{\url{https://research.nvidia.com/labs/sil/projects/omnidreams-blog/paper.pdf}}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     </div>

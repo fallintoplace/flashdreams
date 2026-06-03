@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Causal-Forcing &#8212; FlashDreams v0.1.0a3</title>
+    <title>Causal-Forcing &#8212; FlashDreams v0.1.0rc1</title>
   
   
   
@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cfa2983f" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=4cf6070d" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: Apache-2.0
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
-    <script src="../_static/documentation_options.js?v=da35e9cb"></script>
+    <script src="../_static/documentation_options.js?v=944ffb79"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,13 +54,14 @@ SPDX-License-Identifier: Apache-2.0
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'models/causal_forcing';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/image_zoom.js?v=ada83164"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Causal Wan2.2" href="causal_wan22.html" />
     <link rel="prev" title="Self-Forcing" href="self_forcing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="v0.1.0a3" />
+  <meta name="docsearch:version" content="v0.1.0rc1" />
   
     
     <script src="../_static/searchtools.js"></script>
@@ -133,8 +134,8 @@ SPDX-License-Identifier: Apache-2.0
     
     
     
-    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a3 - Home"/>
-    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a3 - Home"/>
+    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0rc1 - Home"/>
+    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0rc1 - Home"/>
   
   
 </a></div>
@@ -150,7 +151,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../get_started.html">
+  <a class="nav-link nav-internal" href="../quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -164,7 +165,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="index.html">
     Benchmarks
   </a>
 </li>
@@ -249,7 +250,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../get_started.html">
+  <a class="nav-link nav-internal" href="../quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -263,7 +264,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="index.html">
     Benchmarks
   </a>
 </li>
@@ -346,8 +347,8 @@ uv<span class="w"> </span>sync<span class="w"> </span>--project<span class="w"> 
 </section>
 <section id="running-the-method">
 <h2>Running the method<a class="headerlink" href="#running-the-method" title="Link to this heading">#</a></h2>
-<p>To run Causal-Forcing, launch one of the registered runner slugs. For
-example:</p>
+<p>To run Causal-Forcing, launch one of the registered runner slugs via
+<code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code>. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>integrations/causal_forcing<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>causal-forcing-wan2.1-t2v-1.3b-framewise<span class="w"> </span><span class="se">\</span>
@@ -356,8 +357,8 @@ example:</p>
 <span class="w">    </span>--total-blocks<span class="w"> </span><span class="m">21</span>
 </pre></div>
 </div>
-<p>For multi-GPU inference, run the same command under <code class="docutils literal notranslate"><span class="pre">torchrun</span></code> (taking
-4 GPUs as an example):</p>
+<p>For multi-GPU inference, use <code class="docutils literal notranslate"><span class="pre">torchrun</span></code> on top of <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">flashdreams-run</span></code>
+(taking 4 GPUs as an example):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>integrations/causal_forcing<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>torchrun<span class="w"> </span>--nproc_per_node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--no-python<span class="w"> </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>causal-forcing-wan2.1-t2v-1.3b-framewise<span class="w"> </span><span class="se">\</span>
@@ -408,10 +409,10 @@ example:</p>
 </pre></div>
 </div>
 <p>Some generated samples from the above commands:</p>
-<div class="model-video-grid">
+<div class="model-video-grid zoomable">
   <div class="model-video-card">
     <video class="model-video-player" autoplay muted loop playsinline preload="metadata">
-      <source src="https://research-staging.nvidia.com/labs/sil/projects/flashdreams/assets/causal_forcing/causal-forcing-wan2.1-t2v-1.3b-framewise.mp4" type="video/mp4">
+      <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/causal_forcing/causal-forcing-wan2.1-t2v-1.3b-framewise.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="model-video-overlay">
@@ -420,7 +421,7 @@ example:</p>
   </div>
   <div class="model-video-card">
     <video class="model-video-player" autoplay muted loop playsinline preload="metadata">
-      <source src="https://research-staging.nvidia.com/labs/sil/projects/flashdreams/assets/causal_forcing/causal-forcing-wan2.1-i2v-1.3b-framewise.mp4" type="video/mp4">
+      <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/causal_forcing/causal-forcing-wan2.1-i2v-1.3b-framewise.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="model-video-overlay">
@@ -430,6 +431,18 @@ example:</p>
     </div>
   </div>
 </div></section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
+<p>If you use Causal-Forcing, please cite the original work:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">zhu2026causal</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{Causal Forcing: Autoregressive Diffusion Distillation Done Right for High-Quality Real-Time Interactive Video Generation}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Zhu, Hongzhou and Zhao, Min and He, Guande and Su, Hang and Li, Chongxuan and Zhu, Jun}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{arXiv preprint arXiv:2602.02214}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2026}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     </div>

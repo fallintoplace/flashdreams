@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Inference pipeline overview &#8212; FlashDreams v0.1.0a3</title>
+    <title>Inference pipeline overview &#8212; FlashDreams v0.1.0rc1</title>
   
   
   
@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cfa2983f" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=4cf6070d" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: Apache-2.0
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
-    <script src="../_static/documentation_options.js?v=da35e9cb"></script>
+    <script src="../_static/documentation_options.js?v=944ffb79"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,13 +54,14 @@ SPDX-License-Identifier: Apache-2.0
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guides/inference_pipeline_overview';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/image_zoom.js?v=ada83164"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Config system" href="config_system.html" />
     <link rel="prev" title="Developer Guides" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="v0.1.0a3" />
+  <meta name="docsearch:version" content="v0.1.0rc1" />
   
     
     <script src="../_static/searchtools.js"></script>
@@ -133,8 +134,8 @@ SPDX-License-Identifier: Apache-2.0
     
     
     
-    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a3 - Home"/>
-    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a3 - Home"/>
+    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0rc1 - Home"/>
+    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0rc1 - Home"/>
   
   
 </a></div>
@@ -150,7 +151,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../get_started.html">
+  <a class="nav-link nav-internal" href="../quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -164,7 +165,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="../models/index.html">
     Benchmarks
   </a>
 </li>
@@ -253,7 +254,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../get_started.html">
+  <a class="nav-link nav-internal" href="../quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -267,7 +268,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="../models/index.html">
     Benchmarks
   </a>
 </li>
@@ -399,14 +400,14 @@ SPDX-License-Identifier: Apache-2.0
   <section id="inference-pipeline-overview">
 <h1>Inference pipeline overview<a class="headerlink" href="#inference-pipeline-overview" title="Link to this heading">#</a></h1>
 <p>This page outlines the major computation flow in the FlashDreams inference pipeline.
-It should help you understand the core concepts and APIs for building your own model integration,
+It outlines the core concepts and APIs for building custom model integrations,
 or modifying existing ones.</p>
-<img alt="FlashDreams autoregressive inference pipeline overview." src="../_images/flashdreams-inference-pipeline-overview.jpg" />
-<p>The key entry point class for the inference pipeline is
-<a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipeline" title="flashdreams.infra.pipeline.StreamInferencePipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamInferencePipeline</span></code></a>, which defines the
+<img alt="FlashDreams autoregressive inference pipeline overview." class="zoomable" src="../_images/flashdreams-inference-pipeline-overview.jpg" />
+<p>The key entry point for the inference pipeline is the
+<a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipeline" title="flashdreams.infra.pipeline.StreamInferencePipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamInferencePipeline</span></code></a> class, which defines the
 autoregressive generation loop shown in the figure. The persistent state is held in
 <a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipelineCache" title="flashdreams.infra.pipeline.StreamInferencePipelineCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamInferencePipelineCache</span></code></a> as a cache object,
-which is passed around and updated in each autoregressive step.</p>
+which is shared within the pipeline and updated in each autoregressive step.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flashdreams.infra.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">StreamInferencePipeline</span><span class="p">,</span>
     <span class="n">StreamInferencePipelineCache</span><span class="p">,</span>
@@ -414,26 +415,26 @@ which is passed around and updated in each autoregressive step.</p>
 
 <span class="n">pipeline</span><span class="p">:</span> <span class="n">StreamInferencePipeline</span> <span class="o">=</span> <span class="o">...</span>
 
-<span class="c1"># One-shot encoding on global conditions, then initialize cache/state.</span>
+<span class="c1"># One-shot encoding on global conditions, then initialize cache/state</span>
 <span class="n">cache</span><span class="p">:</span> <span class="n">StreamInferencePipelineCache</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">initialize_cache</span><span class="p">(</span>
     <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a beautiful beach scene&quot;</span><span class="p">],</span>
     <span class="n">image</span><span class="o">=</span><span class="n">first_frame</span><span class="p">,</span>
     <span class="o">...</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="c1"># Autoregressive generation loop.</span>
+<span class="c1"># Autoregressive generation loop</span>
 <span class="k">for</span> <span class="n">autoregressive_index</span><span class="p">,</span> <span class="n">control</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">controls</span><span class="p">):</span>
     <span class="n">current_output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">autoregressive_index</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="n">control</span><span class="p">)</span>
     <span class="k">yield</span> <span class="n">current_output</span>
     <span class="n">pipeline</span><span class="o">.</span><span class="n">finalize</span><span class="p">(</span><span class="n">autoregressive_index</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The code snippet above shows the basic loop. At the top level, you first call <a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipeline.initialize_cache" title="flashdreams.infra.pipeline.StreamInferencePipeline.initialize_cache"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initialize_cache()</span></code></a>
-once with global conditions, such as text prompts and the first frame. Then, for each autoregressive step, call
-<a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipeline.generate" title="flashdreams.infra.pipeline.StreamInferencePipeline.generate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate()</span></code></a> to produce the current output chunk,
+<p>The code snippet above shows the basic execution loop. The initial call <a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipeline.initialize_cache" title="flashdreams.infra.pipeline.StreamInferencePipeline.initialize_cache"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initialize_cache()</span></code></a>
+consumes global conditions, such as text prompts and the first frame. Then, for each autoregressive step,
+<a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipeline.generate" title="flashdreams.infra.pipeline.StreamInferencePipeline.generate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate()</span></code></a> is called to produce the current output chunk,
 followed by <a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipeline.finalize" title="flashdreams.infra.pipeline.StreamInferencePipeline.finalize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">finalize()</span></code></a>. This split exists because
 <a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipeline.finalize" title="flashdreams.infra.pipeline.StreamInferencePipeline.finalize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">finalize()</span></code></a> typically handles additional KV
-cache updates that are not in the hot path. This allows them to be offloaded to a background thread in many
+cache updates that are not in the hot path, which can be offloaded to a background thread in many
 cases to hide latency.</p>
 <p>Inside <a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipeline.generate" title="flashdreams.infra.pipeline.StreamInferencePipeline.generate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate()</span></code></a>, the pipeline encodes the
 per-step control input, runs the diffusion model’s denoising loop, and decodes the latent chunk into
@@ -442,7 +443,7 @@ the final output. The following snippet illustrates this internal flow:</p>
 <span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span>
     <span class="n">autoregressive_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-    <span class="c1"># 1. Convert per-step control into model conditioning.</span>
+    <span class="c1"># 1. Convert per-step control into model conditioning</span>
     <span class="k">if</span> <span class="nb">input</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">input</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span>
             <span class="nb">input</span><span class="o">=</span><span class="nb">input</span><span class="p">,</span>
@@ -450,7 +451,7 @@ the final output. The following snippet illustrates this internal flow:</p>
             <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="o">.</span><span class="n">encoder_cache</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="c1"># 2. Run scheduler loop + DiT flow prediction.</span>
+    <span class="c1"># 2. Run scheduler loop + DiT flow prediction</span>
     <span class="n">clean_latent</span><span class="p">,</span> <span class="n">final_state</span> <span class="o">=</span> <span class="n">diffusion_model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
         <span class="n">autoregressive_index</span><span class="o">=</span><span class="n">autoregressive_index</span><span class="p">,</span>
         <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="o">.</span><span class="n">transformer_cache</span><span class="p">,</span>
@@ -458,7 +459,7 @@ the final output. The following snippet illustrates this internal flow:</p>
     <span class="p">)</span>
     <span class="n">cache</span><span class="o">.</span><span class="n">final_state</span> <span class="o">=</span> <span class="n">final_state</span>
 
-    <span class="c1"># 3. Convert latent chunk to output chunk.</span>
+    <span class="c1"># 3. Convert latent chunk to output chunk</span>
     <span class="k">if</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">decoder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">clean_latent</span>
 
@@ -469,14 +470,14 @@ the final output. The following snippet illustrates this internal flow:</p>
     <span class="p">)</span>
 </pre></div>
 </div>
-<p>In FlashDreams, these components are wired together using a configuration system. This allows you to build
-a customized pipeline by supplying different configurations for the encoder, diffusion model, and decoder.
+<p>In FlashDreams, these components are composed using a configuration system. This allows building
+customized pipelines by supplying different configurations for the encoder, diffusion model, and decoder.
 A typical <a class="reference internal" href="../api/infra.html#flashdreams.infra.pipeline.StreamInferencePipelineConfig" title="flashdreams.infra.pipeline.StreamInferencePipelineConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamInferencePipelineConfig</span></code></a> is instantiated as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flashdreams.infra.diffusion.model</span><span class="w"> </span><span class="kn">import</span> <span class="n">DiffusionModelConfig</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">flashdreams.infra.diffusion.scheduler.fm</span><span class="w"> </span><span class="kn">import</span> <span class="n">FlowMatchSchedulerConfig</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">flashdreams.infra.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">StreamInferencePipelineConfig</span>
 
-<span class="c1"># Define your own configs for the encoder, transformer, and decoder.</span>
+<span class="c1"># Define your own configs for the encoder, transformer, and decoder</span>
 <span class="n">CustomizedStreamingEncoderConfig</span> <span class="o">=</span> <span class="o">...</span>
 <span class="n">CustomizedTransformerConfig</span> <span class="o">=</span> <span class="o">...</span>
 <span class="n">CustomizedStreamingDecoderConfig</span> <span class="o">=</span> <span class="o">...</span>
@@ -499,18 +500,18 @@ A typical <a class="reference internal" href="../api/infra.html#flashdreams.infr
 <p>More details on the config system can be found in <a class="reference internal" href="config_system.html"><span class="doc">Config system</span></a>.</p>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
-<p>Here is how existing models use this structure:</p>
+<p>Samples on how existing models use this structure:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/integrations/lingbot/lingbot/config.py">LingBot-World config</a>:
 A camera-controlled I2V model that uses the per-step camera encoder.</p></li>
 <li><p><a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/integrations/self_forcing/self_forcing/config.py">Self-Forcing config</a>:
 A pure T2V model that sets <code class="docutils literal notranslate"><span class="pre">encoder=None</span></code>, so each rollout starts from noise.</p></li>
-<li><p><a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/integrations/omnidreams/omnidreams/config.py">OmniDreams config</a>:
+<li><p><a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/integrations/omnidreams/omnidreams/config.py">NVIDIA OmniDreams config</a>:
 An I2V video model with a VAE-based causal encoder for HDMap control.</p></li>
 <li><p><a class="reference external" href="https://github.com/NVIDIA/flashdreams/blob/main/integrations/wan21/wan21/config.py">Wan2.1 config</a>:
 Treats a bidirectional video model as a single-rollout autoregressive model.</p></li>
 </ul>
-<p>For the detailed API documentation, check out <a class="reference internal" href="../api/infra.html"><span class="doc">Infra</span></a>. If you are interested in implementing a new model,
+<p>For the detailed API documentation, please reference <a class="reference internal" href="../api/infra.html"><span class="doc">Infra</span></a>. To integrate a new model,
 please refer to <a class="reference internal" href="new_integration.html"><span class="doc">Add a new method</span></a>.</p>
 </section>
 </section>

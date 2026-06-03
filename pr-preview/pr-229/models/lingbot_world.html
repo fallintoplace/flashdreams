@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>LingBot-World &#8212; FlashDreams v0.1.0a3</title>
+    <title>LingBot-World &#8212; FlashDreams v0.1.0rc1</title>
   
   
   
@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cfa2983f" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=4cf6070d" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: Apache-2.0
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
-    <script src="../_static/documentation_options.js?v=da35e9cb"></script>
+    <script src="../_static/documentation_options.js?v=944ffb79"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,13 +54,14 @@ SPDX-License-Identifier: Apache-2.0
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'models/lingbot_world';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/image_zoom.js?v=ada83164"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="OmniDreams" href="omnidreams.html" />
+    <link rel="next" title="NVIDIA OmniDreams" href="omnidreams.html" />
     <link rel="prev" title="FlashVSR" href="flashvsr.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="v0.1.0a3" />
+  <meta name="docsearch:version" content="v0.1.0rc1" />
   
     
     <script src="../_static/searchtools.js"></script>
@@ -133,8 +134,8 @@ SPDX-License-Identifier: Apache-2.0
     
     
     
-    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a3 - Home"/>
-    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a3 - Home"/>
+    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0rc1 - Home"/>
+    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0rc1 - Home"/>
   
   
 </a></div>
@@ -150,7 +151,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../get_started.html">
+  <a class="nav-link nav-internal" href="../quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -164,7 +165,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="index.html">
     Benchmarks
   </a>
 </li>
@@ -249,7 +250,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../get_started.html">
+  <a class="nav-link nav-internal" href="../quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -263,7 +264,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="index.html">
     Benchmarks
   </a>
 </li>
@@ -348,8 +349,8 @@ uv<span class="w"> </span>sync<span class="w"> </span>--project<span class="w"> 
 </section>
 <section id="running-the-method">
 <h2>Running the method<a class="headerlink" href="#running-the-method" title="Link to this heading">#</a></h2>
-<p>To run LingBot-World, launch one of the registered runner slugs. For
-example:</p>
+<p>To run LingBot-World, launch one of the registered runner slugs via
+<code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code>. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>integrations/lingbot<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>lingbot-world-fast<span class="w"> </span><span class="se">\</span>
@@ -359,12 +360,12 @@ example:</p>
 <span class="w">    </span>--total-blocks<span class="w"> </span><span class="m">21</span>
 </pre></div>
 </div>
-<p>Sample data are downloaded from the
+<p>Sample data is downloaded from the
 <a class="reference external" href="https://github.com/Robbyant/lingbot-world/tree/main/examples">LingBot-World repository</a>.
 Valid <code class="docutils literal notranslate"><span class="pre">--example-idx</span></code> values are <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">5</span></code>. Note the single GPU command might run
 out of memory for large <code class="docutils literal notranslate"><span class="pre">--total-blocks</span></code> values.</p>
-<p>For multi-GPU inference, run the same command under <code class="docutils literal notranslate"><span class="pre">torchrun</span></code> (taking
-4 GPUs as an example):</p>
+<p>For multi-GPU inference, use <code class="docutils literal notranslate"><span class="pre">torchrun</span></code> on top of <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">flashdreams-run</span></code>
+(taking 4 GPUs as an example):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>integrations/lingbot<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>torchrun<span class="w"> </span>--nproc_per_node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--no-python<span class="w"> </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>lingbot-world-fast<span class="w"> </span><span class="se">\</span>
@@ -403,15 +404,37 @@ out of memory for large <code class="docutils literal notranslate"><span class="
 <span class="w">    </span>--help
 </pre></div>
 </div>
+</section>
+<section id="what-to-expect">
+<h2>What to expect<a class="headerlink" href="#what-to-expect" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Example data</strong>: <code class="docutils literal notranslate"><span class="pre">--example-data</span> <span class="pre">True</span></code> downloads <code class="docutils literal notranslate"><span class="pre">image.jpg</span></code>,
+<code class="docutils literal notranslate"><span class="pre">intrinsics.npy</span></code>, <code class="docutils literal notranslate"><span class="pre">poses.npy</span></code>, <code class="docutils literal notranslate"><span class="pre">prompt.txt</span></code> from the
+<a class="reference external" href="https://github.com/Robbyant/lingbot-world/tree/main/examples">upstream examples folder</a>
+into <code class="docutils literal notranslate"><span class="pre">assets/example_data/lingbot_world/&lt;NN&gt;/</span></code> (<code class="docutils literal notranslate"><span class="pre">&lt;NN&gt;</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">--example-idx</span></code>). Cached after first run; no credentials needed.</p></li>
+<li><p><strong>Model checkpoint</strong>: ~70 GB pulled from
+<code class="docutils literal notranslate"><span class="pre">huggingface.co/robbyant/lingbot-world-fast</span></code> on first run, cached
+under <code class="docutils literal notranslate"><span class="pre">$HF_HOME</span></code>. Export <code class="docutils literal notranslate"><span class="pre">HF_TOKEN</span></code> first.</p></li>
+<li><p><strong>Disk</strong>: keep ~200 GB free for the model + HF cache. Hosts under
+~100 GB have been seen to run out mid-load.</p></li>
+<li><p><strong>First launch</strong>: a few minutes (download + Triton autotuning +
+CUDA-graph warmup). Subsequent launches reuse the caches.</p></li>
+<li><p><strong>Outputs</strong>: <code class="docutils literal notranslate"><span class="pre">outputs/&lt;runner-slug&gt;.mp4</span></code> (16 FPS, 464×832 by
+default) and <code class="docutils literal notranslate"><span class="pre">outputs/stats_&lt;runner-slug&gt;.json</span></code>. Override with
+<code class="docutils literal notranslate"><span class="pre">--output-dir</span></code> / <code class="docutils literal notranslate"><span class="pre">--pixel-height</span></code> / <code class="docutils literal notranslate"><span class="pre">--pixel-width</span></code> / <code class="docutils literal notranslate"><span class="pre">--fps</span></code>.</p></li>
+</ul>
+<p>See <a class="reference internal" href="../developer_guides/inference_pipeline_overview.html"><span class="doc">Inference pipeline overview</span></a> for what one
+autoregressive chunk does end-to-end.</p>
 <p>Some generated samples from the above commands:</p>
-<div class="model-video-grid">
+<div class="model-video-grid zoomable">
   <div class="model-video-card">
     <video class="model-video-player" autoplay muted loop playsinline preload="metadata">
-      <source src="https://research-staging.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-fast-01.mp4" type="video/mp4">
+      <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-fast-01.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <video autoplay muted loop playsinline preload="metadata" style="position: absolute; right: 10px; bottom: 10px; width: 33.3333%; opacity: 0.7; border-radius: 8px; pointer-events: none;">
-      <source src="https://research-staging.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-traj-01.mp4" type="video/mp4">
+      <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-traj-01.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="model-video-overlay">
@@ -420,11 +443,11 @@ out of memory for large <code class="docutils literal notranslate"><span class="
   </div>
   <div class="model-video-card">
     <video class="model-video-player" autoplay muted loop playsinline preload="metadata">
-      <source src="https://research-staging.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-fast-02.mp4" type="video/mp4">
+      <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-fast-02.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <video autoplay muted loop playsinline preload="metadata" style="position: absolute; right: 10px; bottom: 10px; width: 33.3333%; opacity: 0.7; border-radius: 8px; pointer-events: none;">
-      <source src="https://research-staging.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-traj-02.mp4" type="video/mp4">
+      <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-traj-02.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="model-video-overlay">
@@ -443,14 +466,29 @@ uv<span class="w"> </span>run<span class="w"> </span>--package<span class="w"> <
 <span class="w">    </span>--example-idx<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
-<p>The server may take a few minutes to warm up. When it is ready, it prints
-<code class="docutils literal notranslate"><span class="pre">Connect</span> <span class="pre">via</span> <span class="pre">http://&lt;server-ip&gt;:8089/request_session</span></code>.
-Here, <code class="docutils literal notranslate"><span class="pre">&lt;server-ip&gt;</span></code> is the server IP address you are connecting to
-(can use <code class="docutils literal notranslate"><span class="pre">localhost</span></code> when running locally).</p>
+<p><code class="docutils literal notranslate"><span class="pre">--example-idx</span></code> selects which example to download
+(<code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code>); assets auto-download on first launch.
+The HTTP port opens only after model load + warmup — a few minutes on
+first launch, much faster afterwards. When ready the server prints
+<code class="docutils literal notranslate"><span class="pre">Connect</span> <span class="pre">via</span> <span class="pre">http://&lt;server-ip&gt;:8089/request_session</span></code> (use
+<code class="docutils literal notranslate"><span class="pre">localhost</span></code> when running locally).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On a remote or cloud GPU instance (e.g. <a class="reference external" href="https://www.brev.dev/">Brev</a>),
+the server port is usually not reachable at the host IP directly.
+Forward it to your local machine first, then open
+<code class="docutils literal notranslate"><span class="pre">http://localhost:8089/request_session</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Brev</span>
+brev<span class="w"> </span>port-forward<span class="w"> </span>&lt;instance&gt;<span class="w"> </span>-p<span class="w"> </span><span class="m">8089</span>:8089
+<span class="c1"># or plain SSH</span>
+ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">8089</span>:localhost:8089<span class="w"> </span>&lt;user&gt;@&lt;host&gt;
+</pre></div>
+</div>
+</div>
 <p>When successfully connected, the browser-based UI looks like this:</p>
 <div class="model-video-card" style="width: 100%; margin: 10px auto 14px;">
   <video class="model-video-player" autoplay muted loop playsinline preload="metadata">
-    <source src="https://research-staging.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-demo-0520-trim-720P.mp4" type="video/mp4">
+    <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/lingbot_world/lingbot-world-webrtc-recording-0529.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div></section>
@@ -481,6 +519,18 @@ matched settings.</p>
    </figcaption>
  </figure>
 <script src="../_static/js/benchmark_chart.js"></script></section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
+<p>If you use LingBot-World, please cite the original work:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">lingbot-world</span><span class="p">,</span>
+<span class="w">      </span><span class="na">title</span><span class="p">=</span><span class="s">{Advancing Open-source World Models}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">author</span><span class="p">=</span><span class="s">{Robbyant Team and Zelin Gao and Qiuyu Wang and Yanhong Zeng and Jiapeng Zhu and Ka Leong Cheng and Yixuan Li and Hanlin Wang and Yinghao Xu and Shuailei Ma and Yihang Chen and Jie Liu and Yansong Cheng and Yao Yao and Jiayi Zhu and Yihao Meng and Kecheng Zheng and Qingyan Bai and Jingye Chen and Zehong Shen and Yue Yu and Xing Zhu and Yujun Shen and Hao Ouyang}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">journal</span><span class="p">=</span><span class="s">{arXiv preprint arXiv:2601.20540}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">year</span><span class="p">=</span><span class="s">{2026}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     </div>

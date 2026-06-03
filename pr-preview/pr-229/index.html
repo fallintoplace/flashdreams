@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>FlashDreams &#8212; FlashDreams v0.1.0a3</title>
+    <title>FlashDreams &#8212; FlashDreams v0.1.0rc1</title>
   
   
   
@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=cfa2983f" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=4cf6070d" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: Apache-2.0
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
-    <script src="_static/documentation_options.js?v=da35e9cb"></script>
+    <script src="_static/documentation_options.js?v=944ffb79"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,12 +54,13 @@ SPDX-License-Identifier: Apache-2.0
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="_static/js/image_zoom.js?v=ada83164"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Get Started" href="get_started.html" />
+    <link rel="next" title="Get Started" href="quickstart/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="v0.1.0a3" />
+  <meta name="docsearch:version" content="v0.1.0rc1" />
   
     
     <script src="_static/searchtools.js"></script>
@@ -132,8 +133,8 @@ SPDX-License-Identifier: Apache-2.0
     
     
     
-    <img src="_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a3 - Home"/>
-    <img src="_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a3 - Home"/>
+    <img src="_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0rc1 - Home"/>
+    <img src="_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0rc1 - Home"/>
   
   
 </a></div>
@@ -149,7 +150,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="get_started.html">
+  <a class="nav-link nav-internal" href="quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -163,7 +164,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="benchmarks.html">
+  <a class="nav-link nav-internal" href="models/index.html">
     Benchmarks
   </a>
 </li>
@@ -250,7 +251,7 @@ SPDX-License-Identifier: Apache-2.0
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="get_started.html">
+  <a class="nav-link nav-internal" href="quickstart/index.html">
     Get Started
   </a>
 </li>
@@ -264,7 +265,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="benchmarks.html">
+  <a class="nav-link nav-internal" href="models/index.html">
     Benchmarks
   </a>
 </li>
@@ -332,11 +333,49 @@ SPDX-License-Identifier: Apache-2.0
 interactive autoregressive video and world models.</p>
 </div>
 <div class="fd-cta-row docutils container">
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference internal" href="get_started.html"><span class="doc">Get started</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference internal" href="quickstart/index.html"><span class="doc">Get started</span></a></p>
 <p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference external" href="https://github.com/NVIDIA/flashdreams"><span>GitHub</span></a></p>
 <p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference internal" href="community/index.html"><span class="doc">Community</span></a></p>
 </div>
+<div class="fd-promo-video-wrap">
+  <video
+    class="fd-promo-video-player"
+    controls
+    playsinline
+    preload="metadata"
+    aria-label="FlashDreams quick intro video">
+    <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/promo_video/flashdreams-promo-hq-6-720P.mp4" type="video/mp4">
+  </video>
+  <button class="fd-promo-play" type="button" aria-label="Play FlashDreams quick intro video">
+    <span class="fd-promo-play-icon" aria-hidden="true"></span>
+  </button>
 </div>
+<script>
+  (() => {
+    const script = document.currentScript;
+    const container = script ? script.previousElementSibling : null;
+    if (!container) {
+      return;
+    }
+    const video = container.querySelector(".fd-promo-video-player");
+    const playButton = container.querySelector(".fd-promo-play");
+    if (!video || !playButton) {
+      return;
+    }
+    const showOverlay = () => container.classList.remove("is-playing");
+    const hideOverlay = () => container.classList.add("is-playing");
+    playButton.addEventListener("click", () => {
+      video.controls = true;
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(showOverlay);
+      }
+    });
+    video.addEventListener("play", hideOverlay);
+    video.addEventListener("pause", showOverlay);
+    video.addEventListener("ended", showOverlay);
+  })();
+</script></div>
 <section id="why-flashdreams">
 <h2>Why FlashDreams<a class="headerlink" href="#why-flashdreams" title="Link to this heading">#</a></h2>
 <p>FlashDreams is built for the case where a diffusion video model has to
@@ -361,7 +400,7 @@ covered in the <a class="reference internal" href="documentation.html"><span cla
 <p>Each tile shows per-step latency at steady state — post-warmup,
 post-graph-capture — measured against the upstream library’s own
 runner on the same hardware and the same checkpoint. Full methodology
-lives on the <a class="reference internal" href="benchmarks.html"><span class="doc">benchmarks page</span></a>.</p>
+lives on the <a class="reference internal" href="models/index.html"><span class="doc">benchmarks page</span></a>.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-4 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-column docutils">
@@ -421,10 +460,10 @@ lives on the <a class="reference internal" href="benchmarks.html"><span class="d
 </section>
 <section id="try-flashdreams">
 <h2>Try FlashDreams<a class="headerlink" href="#try-flashdreams" title="Link to this heading">#</a></h2>
-<p>The <a class="reference internal" href="get_started.html"><span class="doc">Get Started guide</span></a> walks from a fresh
+<p>The <a class="reference internal" href="quickstart/index.html"><span class="doc">Get Started guide</span></a> walks from a fresh
 checkout to a generated frame on a single GPU.</p>
 <div class="fd-cta-row docutils container">
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference internal" href="get_started.html"><span class="doc">Get started</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference internal" href="quickstart/index.html"><span class="doc">Get started</span></a></p>
 </div>
 </section>
 <section id="supported-models">
@@ -483,7 +522,7 @@ OmniDreams</div>
 OmniDreams checkpoints, including a diffusion-forcing AR
 variant.</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/omnidreams.html"><span class="doc">OmniDreams</span></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="models/omnidreams.html"><span class="doc">NVIDIA OmniDreams</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover fd-feature docutils">
