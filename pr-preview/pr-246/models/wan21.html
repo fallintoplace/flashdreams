@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Wan2.1 &#8212; FlashDreams v0.1.0a4</title>
+    <title>Wan2.1 &#8212; FlashDreams v0.1.0rc1</title>
   
   
   
@@ -38,7 +38,7 @@ SPDX-License-Identifier: Apache-2.0
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6534aa71" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=4cf6070d" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: Apache-2.0
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
-    <script src="../_static/documentation_options.js?v=11bc7906"></script>
+    <script src="../_static/documentation_options.js?v=944ffb79"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,13 +54,14 @@ SPDX-License-Identifier: Apache-2.0
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'models/wan21';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/image_zoom.js?v=ada83164"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Community" href="../community/index.html" />
-    <link rel="prev" title="OmniDreams" href="omnidreams.html" />
+    <link rel="prev" title="NVIDIA OmniDreams" href="omnidreams.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="v0.1.0a4" />
+  <meta name="docsearch:version" content="v0.1.0rc1" />
   
     
     <script src="../_static/searchtools.js"></script>
@@ -133,8 +134,8 @@ SPDX-License-Identifier: Apache-2.0
     
     
     
-    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0a4 - Home"/>
-    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0a4 - Home"/>
+    <img src="../_static/horizontal-light.svg" class="logo__image only-light" alt="FlashDreams v0.1.0rc1 - Home"/>
+    <img src="../_static/horizontal-dark.svg" class="logo__image only-dark pst-js-only" alt="FlashDreams v0.1.0rc1 - Home"/>
   
   
 </a></div>
@@ -164,7 +165,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="index.html">
     Benchmarks
   </a>
 </li>
@@ -263,7 +264,7 @@ SPDX-License-Identifier: Apache-2.0
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../benchmarks.html">
+  <a class="nav-link nav-internal" href="index.html">
     Benchmarks
   </a>
 </li>
@@ -340,7 +341,8 @@ uv<span class="w"> </span>sync<span class="w"> </span>--project<span class="w"> 
 </section>
 <section id="running-the-method">
 <h2>Running the method<a class="headerlink" href="#running-the-method" title="Link to this heading">#</a></h2>
-<p>To run Wan2.1, launch one of the registered runner slugs. For example:</p>
+<p>To run Wan2.1, launch one of the registered runner slugs via
+<code class="docutils literal notranslate"><span class="pre">flashdreams-run</span></code>. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>integrations/wan21<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>wan21-t2v-1.3b-480p<span class="w"> </span><span class="se">\</span>
@@ -348,8 +350,8 @@ uv<span class="w"> </span>sync<span class="w"> </span>--project<span class="w"> 
 <span class="w">    </span>--pixel-height<span class="w"> </span><span class="m">832</span><span class="w"> </span>--pixel-width<span class="w"> </span><span class="m">480</span>
 </pre></div>
 </div>
-<p>For multi-GPU inference, run the same command under <code class="docutils literal notranslate"><span class="pre">torchrun</span></code> (taking
-4 GPUs as an example):</p>
+<p>For multi-GPU inference, use <code class="docutils literal notranslate"><span class="pre">torchrun</span></code> on top of <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">flashdreams-run</span></code>
+(taking 4 GPUs as an example):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>integrations/wan21<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>torchrun<span class="w"> </span>--nproc_per_node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--no-python<span class="w"> </span>flashdreams-run<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>wan21-t2v-1.3b-480p<span class="w"> </span><span class="se">\</span>
@@ -395,7 +397,7 @@ uv<span class="w"> </span>sync<span class="w"> </span>--project<span class="w"> 
 </pre></div>
 </div>
 <p>Some generated samples from the above commands:</p>
-<div class="model-video-grid">
+<div class="model-video-grid zoomable">
   <div class="model-video-card">
     <video class="model-video-player" autoplay muted loop playsinline preload="metadata">
       <source src="https://research.nvidia.com/labs/sil/projects/flashdreams/assets/wan21/wan21-t2v-1.3b-480p.mp4" type="video/mp4">
@@ -443,6 +445,18 @@ matched settings.</p>
    </figcaption>
  </figure>
 <script src="../_static/js/benchmark_chart.js"></script></section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
+<p>If you use Wan2.1, please cite the original work:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">wan2025</span><span class="p">,</span>
+<span class="w">      </span><span class="na">title</span><span class="p">=</span><span class="s">{Wan: Open and Advanced Large-Scale Video Generative Models}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">author</span><span class="p">=</span><span class="s">{Team Wan and Ang Wang and Baole Ai and Bin Wen and Chaojie Mao and Chen-Wei Xie and Di Chen and Feiwu Yu and Haiming Zhao and Jianxiao Yang and Jianyuan Zeng and Jiayu Wang and Jingfeng Zhang and Jingren Zhou and Jinkai Wang and Jixuan Chen and Kai Zhu and Kang Zhao and Keyu Yan and Lianghua Huang and Mengyang Feng and Ningyi Zhang and Pandeng Li and Pingyu Wu and Ruihang Chu and Ruili Feng and Shiwei Zhang and Siyang Sun and Tao Fang and Tianxing Wang and Tianyi Gui and Tingyu Weng and Tong Shen and Wei Lin and Wei Wang and Wei Wang and Wenmeng Zhou and Wente Wang and Wenting Shen and Wenyuan Yu and Xianzhong Shi and Xiaoming Huang and Xin Xu and Yan Kou and Yangyu Lv and Yifei Li and Yijing Liu and Yiming Wang and Yingya Zhang and Yitong Huang and Yong Li and You Wu and Yu Liu and Yulin Pan and Yun Zheng and Yuntao Hong and Yupeng Shi and Yutong Feng and Zeyinzi Jiang and Zhen Han and Zhi-Fan Wu and Ziyu Liu}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">journal</span><span class="p">=</span><span class="s">{arXiv preprint arXiv:2503.20314}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">year</span><span class="p">=</span><span class="s">{2025}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     </div>
